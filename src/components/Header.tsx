@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="w-full sticky top-0 z-10 px-8 py-4 flex justify-between bg-black/40 text-gray-300 font-bold">
+    <header className="w-full fixed top-0 z-10 px-8 py-4 flex justify-between bg-black/40 text-gray-300 font-bold">
       <a
         href="#home"
         className="transition-colors duration-300 hover:text-gray-200 hover:text-shadow-lg"

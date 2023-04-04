@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import mediumImage from "../assets/images/project-screenshots/medium-clone.png";
 import todoImage from "../assets/images/project-screenshots/todo-list.png";
 import waldoImage from "../assets/images/project-screenshots/where-is-waldo.png";
@@ -43,9 +44,13 @@ function Projects() {
 
   return (
     <div id="projects" className="pt-20">
-      <h1 className="text-white font-bold text-3xl border-b border-b-zinc-600 mb-7 pb-7">
+      <motion.h1
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="text-white font-bold text-3xl border-b border-b-zinc-600 mb-7 pb-7"
+      >
         Projects
-      </h1>
+      </motion.h1>
 
       {projects.map((project) => (
         <ProjectItem project={project} key={project.title} />
