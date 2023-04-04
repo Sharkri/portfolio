@@ -42,7 +42,7 @@ function Projects() {
   ];
 
   return (
-    <div>
+    <div id="projects" className="pt-20">
       <h1 className="text-white font-bold text-3xl border-b border-b-zinc-600 mb-7 pb-7">
         Projects
       </h1>
