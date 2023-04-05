@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import ProjectItem from "./ProjectItem";
-import projects from "../projectsObject";
+import projects from "../projectsArray";
 
 function Projects() {
   return (
