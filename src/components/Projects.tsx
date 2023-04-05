@@ -4,20 +4,25 @@ import projects from "../projectsArray";
 
 function Projects() {
   return (
-    <div id="projects" className="scroll-mt-16">
+    <div id="projects" className="scroll-mt-20">
       <motion.h1
         initial={{
+          filter: "blur(25px)",
           opacity: 0,
-          filter: "blur(3px)",
-          transform: "translateY(-5px)",
+          y: -70,
         }}
         whileInView={{
-          opacity: 1,
           filter: "blur(0px)",
-          transform: "translateY(0)",
+          opacity: 1,
+          y: 0,
         }}
-        transition={{ duration: 0.38 }}
-        className="text-white font-bold text-3xl origin-top"
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 24,
+          mass: 2,
+        }}
+        className="text-white font-bold text-3xl"
       >
         Projects
       </motion.h1>
