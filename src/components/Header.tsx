@@ -1,8 +1,28 @@
+import { useEffect, useState } from "react";
+
 function Header() {
+  const [isTop, setIsTop] = useState(true);
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsTop(window.pageYOffset <= 25);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="w-full fixed top-0 z-10 px-8 py-4 flex justify-between bg-black/40 text-gray-300 font-bold">
+    <header
+      className={`w-full h-[56px] fixed top-0 z-10 px-8 py-4 flex justify-between ${
+        isTop ? "translate-y-4" : "bg-black/40"
+      } text-gray-300 font-bold transition-[color,_transform] duration-300`}
+    >
       <a
-        href="#home"
+        href="#top"
         className="transition-colors duration-300 hover:text-gray-200 hover:text-shadow-lg"
       >
         Home
