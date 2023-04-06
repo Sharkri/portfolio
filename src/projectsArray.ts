@@ -1,6 +1,6 @@
-import mediumImage from "./assets/images/project-screenshots/medium-clone.png";
-import todoImage from "./assets/images/project-screenshots/todo-list.png";
-import waldoImage from "./assets/images/project-screenshots/where-is-waldo.png";
+import mediumImage from "./images/project-screenshots/medium-clone.png";
+import todoImage from "./images/project-screenshots/todo-list.png";
+import waldoImage from "./images/project-screenshots/where-is-waldo.png";
 import Project from "./interfaces/ProjectInterface";
 
 const projects: Project[] = [

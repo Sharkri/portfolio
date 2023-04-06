@@ -29,9 +29,9 @@ function Header() {
       </a>
 
       <nav className="flex gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300">
-        <a href="#something">Stuff</a>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
-        <a href="#contact">Contract</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
   );
