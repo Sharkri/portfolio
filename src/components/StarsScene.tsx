@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import star1 from "../assets/images/star1.png";
-import star2 from "../assets/images/star2.png";
+import star1 from "../images/stars/star1.png";
+import star2 from "../images/stars/star2.png";
 import getRandomParticles from "../helper-functions/getRandomParticles";
 
 function StarsScene() {
@@ -16,7 +16,7 @@ function StarsScene() {
     const loader = new THREE.TextureLoader();
     const scene = new THREE.Scene();
 
-    renderer.setClearColor(new THREE.Color("#1c1624"));
+    renderer.setClearColor(new THREE.Color("#1a2a3a"));
 
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(-1, 2, 4);
@@ -30,23 +30,23 @@ function StarsScene() {
 
     geometries[0].setAttribute(
       "position",
-      new THREE.BufferAttribute(getRandomParticles(300), 3)
+      new THREE.BufferAttribute(getRandomParticles(500), 3)
     );
 
     geometries[1].setAttribute(
       "position",
-      new THREE.BufferAttribute(getRandomParticles(1250), 3)
+      new THREE.BufferAttribute(getRandomParticles(1500), 3)
     );
 
     const materials = [
       new THREE.PointsMaterial({
-        size: 0.05,
+        size: 0.075,
         map: loader.load(star1),
         transparent: true,
       }),
 
       new THREE.PointsMaterial({
-        size: 0.075,
+        size: 0.1,
         map: loader.load(star2),
         transparent: true,
       }),
@@ -91,7 +91,6 @@ function StarsScene() {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-
     // eslint-disable-next-line consistent-return
     return () => {
       // Clean up scene
