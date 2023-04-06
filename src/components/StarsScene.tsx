@@ -3,7 +3,6 @@ import * as THREE from "three";
 import star1 from "../assets/images/star1.png";
 import star2 from "../assets/images/star2.png";
 import getRandomParticles from "../helper-functions/getRandomParticles";
-import resizeRendererIfNeeded from "../helper-functions/resizeRendererIfNeeded";
 
 function StarsScene() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -14,9 +13,10 @@ function StarsScene() {
     let [mouseX, mouseY] = [0, 0];
 
     const renderer = new THREE.WebGLRenderer({ canvas: canvasRef.current });
-    renderer.setClearColor(new THREE.Color("#1c1624"));
-
+    const loader = new THREE.TextureLoader();
     const scene = new THREE.Scene();
+
+    renderer.setClearColor(new THREE.Color("#1c1624"));
 
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(-1, 2, 4);
@@ -37,8 +37,6 @@ function StarsScene() {
       "position",
       new THREE.BufferAttribute(getRandomParticles(1250), 3)
     );
-
-    const loader = new THREE.TextureLoader();
 
     const materials = [
       new THREE.PointsMaterial({
@@ -62,8 +60,14 @@ function StarsScene() {
 
     function render() {
       // resize canvas if needed
-      if (resizeRendererIfNeeded(renderer)) {
-        const canvas = renderer.domElement;
+      const canvas = renderer.domElement;
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+
+      const resizeNeeded = canvas.width !== width || canvas.height !== height;
+
+      if (resizeNeeded) {
+        renderer.setSize(width, height, false);
         camera.aspect = canvas.clientWidth / canvas.clientHeight;
         camera.updateProjectionMatrix();
       }
@@ -90,6 +94,17 @@ function StarsScene() {
 
     // eslint-disable-next-line consistent-return
     return () => {
+      // Clean up scene
+      renderer.dispose();
+      scene.remove(starsT1);
+      scene.remove(starsT2);
+      geometries.forEach((geometry) => geometry.dispose());
+      materials.forEach((material) => {
+        material.dispose();
+        material.map?.dispose();
+      });
+
+      // remove event listener
       document.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
