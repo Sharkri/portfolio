@@ -16,7 +16,7 @@ function StarsScene() {
     const loader = new THREE.TextureLoader();
     const scene = new THREE.Scene();
 
-    renderer.setClearColor(new THREE.Color("#1a2a3a"));
+    renderer.setClearColor(new THREE.Color("#1d2c33"));
 
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(-1, 2, 4);
@@ -30,7 +30,7 @@ function StarsScene() {
 
     geometries[0].setAttribute(
       "position",
-      new THREE.BufferAttribute(getRandomParticles(500), 3)
+      new THREE.BufferAttribute(getRandomParticles(450), 3)
     );
 
     geometries[1].setAttribute(
