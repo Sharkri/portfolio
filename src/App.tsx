@@ -16,13 +16,12 @@ function App() {
       <div className="absolute w-full h-full flex flex-col justify-between">
         <Header />
 
-        <main className="grow flex flex-col gap-8 px-10 max-w-[1440px] mx-auto pt-[92px]">
+        <div className="grow flex flex-col gap-8 px-10 max-w-[1440px] mx-auto pt-[92px]">
           <Hero />
           <About />
           <Projects />
-        </main>
-
-        <ContactFooter />
+          <ContactFooter />
+        </div>
       </div>
     </div>
   );
