@@ -1,4 +1,3 @@
-import Heading from "../helper/Heading";
 import JSLogo from "../../images/logos/javascript-logo.svg";
 import TSLogo from "../../images/logos/typescript-logo.svg";
 import ReactLogo from "../../images/logos/react-logo.svg";
@@ -12,6 +11,7 @@ import JestLogo from "../../images/logos/jest-logo.svg";
 import FirebaseLogo from "../../images/logos/firebase-logo.svg";
 
 import TechnologyItem from "../helper/TechnologyItem";
+import Section from "../helper/Section";
 
 function About() {
   const technologies = [
@@ -29,22 +29,23 @@ function About() {
   ];
 
   return (
-    <div>
-      <Heading id="about">About</Heading>
+    <Section
+      headingText="About"
+      headingId="about"
+      className="flex flex-col justify-center items-center"
+    >
+      <h1 className="p-1 mb-4 text-2xl max-sm:text-xl font-bold">Skills</h1>
 
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="p-1 mb-4 text-2xl max-sm:text-xl font-bold">Skills</h1>
-        <div className="flex justify-center flex-wrap gap-6 max-w-[928px]">
-          {technologies.map((technology) => (
-            <TechnologyItem
-              name={technology.name}
-              logo={technology.logo}
-              key={technology.name}
-            />
-          ))}
-        </div>
+      <div className="flex justify-center flex-wrap gap-6 max-w-[928px]">
+        {technologies.map((technology) => (
+          <TechnologyItem
+            name={technology.name}
+            logo={technology.logo}
+            key={technology.name}
+          />
+        ))}
       </div>
-    </div>
+    </Section>
   );
 }
 
