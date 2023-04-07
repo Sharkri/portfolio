@@ -18,7 +18,7 @@ const projects: Project[] = [
     description:
       "A responsive Todo List application that uses Firebase to store todos and projects. You can either create an account to use, or continue as a guest.",
     githubRepo: "https://github.com/Sharkri/todo-list",
-    livePreview: "todo-list-4aa13.web.app/",
+    livePreview: "https://todo-list-4aa13.web.app/",
     image: todoImage,
     technologies: ["JavaScript", "Firebase", "Webpack", "date-fns"],
   },
@@ -28,7 +28,7 @@ const projects: Project[] = [
     description:
       'An interactive version of "Where\'s Waldo?", a game where players try to find several characters hidden inside a picture. In this version, players are timed. Upon completion, the user may enter their name into a leaderboard stored in firebase.',
     githubRepo: "https://github.com/Sharkri/where-is-waldo",
-    livePreview: "where-is-waldo-3e672.web.app/",
+    livePreview: "https://where-is-waldo-3e672.web.app/",
     image: waldoImage,
     technologies: [
       "ReactJS",
