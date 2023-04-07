@@ -25,7 +25,7 @@ export default {
       },
 
       animation: {
-        "text-slide-up": "text-slide-up 1s",
+        "text-slide-up": "text-slide-up 0.8s ease-in-out",
       },
     },
   },
