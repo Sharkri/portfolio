@@ -12,13 +12,34 @@ export default {
       xlg: "1023px",
     },
 
-    extend: {},
+    extend: {
+      keyframes: {
+        "text-slide-up": {
+          from: {
+            transform: "translateY(100%)",
+          },
+          to: {
+            transform: "translateY(0%)",
+          },
+        },
+      },
+
+      animation: {
+        "text-slide-up": "text-slide-up 1s",
+      },
+    },
   },
   plugins: [
     plugin(function ({ addVariant, addUtilities }) {
       addUtilities({
         ".text-shadow-lg": {
           "text-shadow": "rgb(212, 212, 212) 0px 0px 10px",
+        },
+        ".flex-col-center": {
+          display: "flex",
+          "flex-direction": "column",
+          "justify-content": "center",
+          "align-items": "center",
         },
       });
 

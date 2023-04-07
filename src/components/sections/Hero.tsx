@@ -1,11 +1,21 @@
 function Hero() {
   return (
-    <div className="uppercase text-white xlg:text-[min(8vw,92px)] text-[10vw] mx-auto">
-      <h1 className="leading-[1.05]">Sharkri</h1>
-      <h1 className="font-bold md:translate-x-[14%] translate-x-[10%] leading-[1.05]">
-        <p>web</p>
-        <p className="md:translate-x-[6%] translate-x-[5%]">developer</p>
-      </h1>
+    <div className="flex-col-center max-w-[960px] mx-auto w-full">
+      <div className="text-[min(10vw,128px)] w-full max-w-[70vw] child:leading-[1.05] uppercase">
+        <h1 className="overflow-hidden">
+          <p className="animate-text-slide-up">Sharkri</p>
+        </h1>
+
+        <h1 className="font-bold pl-[14%]">
+          <div className="overflow-hidden">
+            <p className="animate-text-slide-up">web</p>
+          </div>
+
+          <div className="overflow-hidden pl-[6%]">
+            <p className="animate-text-slide-up">developer</p>
+          </div>
+        </h1>
+      </div>
     </div>
   );
 }
