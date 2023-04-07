@@ -17,17 +17,10 @@ function Header() {
 
   return (
     <header
-      className={`w-full h-[56px] fixed top-0 z-10 px-8 py-4 flex justify-between ${
+      className={`w-full h-[56px] fixed top-0 z-10 px-8 py-4 ${
         isTop ? "translate-y-2" : "bg-black/40"
-      } text-gray-300 font-bold transition-[color,_transform] duration-200`}
+      } text-gray-300 font-bold transition-[color,transform] duration-200 flex justify-end`}
     >
-      <a
-        href="#top"
-        className="transition-colors duration-300 hover:text-gray-200 hover:text-shadow-lg"
-      >
-        Home
-      </a>
-
       <nav className="flex gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
