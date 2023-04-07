@@ -2,7 +2,7 @@ import Project from "../../interfaces/ProjectInterface";
 
 function ProjectItem({ project }: { project: Project }) {
   return (
-    <div className="flex flex-col gap-8 border-b border-b-zinc-600 mb-7 pb-8">
+    <div className="flex flex-col gap-8 border-b border-b-white/50 last:border-b-0 last:pb-0 mb-7 pb-8">
       <h1 className="text-xl font-bold">{project.title}</h1>
 
       <div className="flex max-lg:flex-col gap-6">
