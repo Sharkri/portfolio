@@ -33,7 +33,7 @@ function About() {
       <Heading id="about">About</Heading>
 
       <div className="flex flex-col justify-center items-center">
-        <h1 className="p-1 mb-4 text-2xl font-bold">Skills</h1>
+        <h1 className="p-1 mb-4 text-2xl max-sm:text-xl font-bold">Skills</h1>
         <div className="flex justify-center flex-wrap gap-6 max-w-[928px]">
           {technologies.map((technology) => (
             <TechnologyItem
