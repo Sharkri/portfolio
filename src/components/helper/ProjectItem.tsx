@@ -22,15 +22,9 @@ function ProjectItem({ project }: { project: Project }) {
 
           <div>
             <h1 className="text-lg font-bold">Technologies</h1>
-            {project.technologies.map((technologyName, index) => (
-              <span key={technologyName} className="text-white/75">
-                {technologyName}
-                {
-                  // remove trailing comma
-                  index !== project.technologies.length - 1 && ", "
-                }
-              </span>
-            ))}
+            <span className="text-white/75">
+              {project.technologies.join(", ")}
+            </span>
           </div>
 
           <div className="flex gap-6 font-bold">
