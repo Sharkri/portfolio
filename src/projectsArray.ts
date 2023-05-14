@@ -1,5 +1,9 @@
 import Project from "./interfaces/ProjectInterface";
 
+import waldoImg from "./project-screenshots/where-is-waldo.png?w=668&webp&imagetools";
+import todoImg from "./project-screenshots/todo-list.png?w=668&webp&imagetools";
+import mediumImg from "./project-screenshots/medium-clone.png?w=668&webp&imagetools";
+
 const projects: Project[] = [
   {
     title: "Medium Clone",
@@ -7,7 +11,7 @@ const projects: Project[] = [
       "A platform for writers to share their articles (markdown supported) and read articles from other writers",
     githubRepo: "https://github.com/Sharkri/medium-clone",
     livePreview: "https://sharkri.github.io/medium-clone",
-    image: "/assets/images/project-screenshots/medium-clone.png",
+    image: mediumImg,
     technologies: ["ReactJS", "Typescript", "Firebase", "TailwindCSS"],
   },
   {
@@ -16,7 +20,7 @@ const projects: Project[] = [
       "A responsive Todo List application that uses Firebase to store todos and projects. You can either create an account to use, or continue as a guest.",
     githubRepo: "https://github.com/Sharkri/todo-list",
     livePreview: "https://todo-list-4aa13.web.app/",
-    image: "/assets/images/project-screenshots/todo-list.png",
+    image: todoImg,
     technologies: ["JavaScript", "Firebase", "Webpack", "date-fns"],
   },
 
@@ -26,7 +30,7 @@ const projects: Project[] = [
       'An interactive version of "Where\'s Waldo?", a game where players try to find several characters hidden inside a picture. In this version, players are timed. Upon completion, the user may enter their name into a leaderboard stored in firebase.',
     githubRepo: "https://github.com/Sharkri/where-is-waldo",
     livePreview: "https://where-is-waldo-3e672.web.app/",
-    image: "/assets/images/project-screenshots/where-is-waldo.png",
+    image: waldoImg,
     technologies: [
       "ReactJS",
       "React Router Dom",

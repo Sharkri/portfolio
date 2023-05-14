@@ -11,6 +11,7 @@ function ProjectItem({ project }: { project: Project }) {
             src={project.image}
             className="brightness-[0.8] hover:brightness-90 hover:scale-105 transition duration-300"
             alt=""
+            loading="lazy"
           />
         </div>
 
