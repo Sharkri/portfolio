@@ -39,13 +39,13 @@ function StarsScene() {
     const materials = [
       new THREE.PointsMaterial({
         size: 0.075,
-        map: loader.load("/assets/images/stars/star1.png"),
+        map: loader.load("assets/images/stars/star1.png"),
         transparent: true,
       }),
 
       new THREE.PointsMaterial({
         size: 0.1,
-        map: loader.load("/assets/images/stars/star2.png"),
+        map: loader.load("assets/images/stars/star2.png"),
         transparent: true,
       }),
     ];

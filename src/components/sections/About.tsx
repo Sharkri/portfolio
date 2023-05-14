@@ -3,17 +3,17 @@ import Section from "../helper/Section";
 
 function About() {
   const technologies = [
-    { name: "JavaScript", logo: "/assets/images/logos/javascript-logo.svg" },
-    { name: "Typescript", logo: "/assets/images/logos/typescript-logo.svg" },
-    { name: "React", logo: "/assets/images/logos/react-logo.svg" },
-    { name: "NextJS", logo: "/assets/images/logos/nextjs-logo.svg" },
-    { name: "TailwindCSS", logo: "/assets/images/logos/tailwindcss-logo.svg" },
-    { name: "Git", logo: "/assets/images/logos/git-logo.svg" },
-    { name: "Vite", logo: "/assets/images/logos/vite-logo.svg" },
-    { name: "Webpack", logo: "/assets/images/logos/webpack-logo.svg" },
-    { name: "NPM", logo: "/assets/images/logos/npm-logo.svg" },
-    { name: "Jest", logo: "/assets/images/logos/jest-logo.svg" },
-    { name: "Firebase", logo: "/assets/images/logos/firebase-logo.svg" },
+    { name: "JavaScript", logo: "assets/images/logos/javascript-logo.svg" },
+    { name: "Typescript", logo: "assets/images/logos/typescript-logo.svg" },
+    { name: "React", logo: "assets/images/logos/react-logo.svg" },
+    { name: "NextJS", logo: "assets/images/logos/nextjs-logo.svg" },
+    { name: "TailwindCSS", logo: "assets/images/logos/tailwindcss-logo.svg" },
+    { name: "Git", logo: "assets/images/logos/git-logo.svg" },
+    { name: "Vite", logo: "assets/images/logos/vite-logo.svg" },
+    { name: "Webpack", logo: "assets/images/logos/webpack-logo.svg" },
+    { name: "NPM", logo: "assets/images/logos/npm-logo.svg" },
+    { name: "Jest", logo: "assets/images/logos/jest-logo.svg" },
+    { name: "Firebase", logo: "assets/images/logos/firebase-logo.svg" },
   ];
 
   return (
