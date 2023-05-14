@@ -1,0 +1,142 @@
+{
+  "_chunk-0e184ced.js": {
+    "file": "assets/chunks/chunk-0e184ced.js"
+  },
+  "_chunk-28fec53a.js": {
+    "file": "assets/chunks/chunk-28fec53a.js"
+  },
+  "_chunk-93d9bafa.js": {
+    "assets": [
+      "assets/static/fa-brands-400.74833209.woff2",
+      "assets/static/fa-brands-400.20c4a58b.ttf",
+      "assets/static/fa-regular-400.8e7e5ea1.woff2",
+      "assets/static/fa-regular-400.528d022d.ttf",
+      "assets/static/fa-solid-900.7152a693.woff2",
+      "assets/static/fa-solid-900.67a65763.ttf",
+      "assets/static/fa-v4compatibility.694a17c3.woff2",
+      "assets/static/fa-v4compatibility.0515a423.ttf"
+    ],
+    "css": [
+      "assets/static/all.bb62707b.css"
+    ],
+    "file": "assets/chunks/chunk-93d9bafa.js",
+    "imports": [
+      "_chunk-0e184ced.js"
+    ]
+  },
+  "all.css": {
+    "file": "assets/static/all.bb62707b.css",
+    "src": "all.css"
+  },
+  "medium-clone.webp": {
+    "file": "assets/static/medium-clone.01bf5865.webp",
+    "src": "medium-clone.webp"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf": {
+    "file": "assets/static/fa-brands-400.20c4a58b.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2": {
+    "file": "assets/static/fa-brands-400.74833209.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf": {
+    "file": "assets/static/fa-regular-400.528d022d.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2": {
+    "file": "assets/static/fa-regular-400.8e7e5ea1.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-regular-400.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf": {
+    "file": "assets/static/fa-solid-900.67a65763.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2": {
+    "file": "assets/static/fa-solid-900.7152a693.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.woff2"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf": {
+    "file": "assets/static/fa-v4compatibility.0515a423.ttf",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.ttf"
+  },
+  "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2": {
+    "file": "assets/static/fa-v4compatibility.694a17c3.woff2",
+    "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
+  },
+  "node_modules/vite-plugin-ssr/dist/esm/client/entry.js": {
+    "dynamicImports": [
+      "src/pages/index/index.page.tsx",
+      "src/renderer/_error.page.tsx",
+      "src/renderer/_default.page.client.tsx"
+    ],
+    "file": "assets/entries/entry-server-routing.6c61df7e.js",
+    "imports": [
+      "_chunk-28fec53a.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/vite-plugin-ssr/dist/esm/client/entry.js"
+  },
+  "node_modules/vite-plugin-ssr/dist/esm/client/router/entry.js": {
+    "dynamicImports": [
+      "src/pages/index/index.page.tsx",
+      "src/renderer/_error.page.tsx",
+      "src/renderer/_default.page.client.tsx"
+    ],
+    "file": "assets/entries/entry-client-routing.e0f98a07.js",
+    "imports": [
+      "_chunk-28fec53a.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/vite-plugin-ssr/dist/esm/client/router/entry.js"
+  },
+  "src/pages/index/index.page.tsx": {
+    "assets": [
+      "assets/static/where-is-waldo.817f727c.webp",
+      "assets/static/todo-list.c5893cde.webp",
+      "assets/static/medium-clone.01bf5865.webp"
+    ],
+    "file": "assets/entries/src_pages_index_index.page.2d4027c6.js",
+    "imports": [
+      "_chunk-0e184ced.js",
+      "_chunk-93d9bafa.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/pages/index/index.page.tsx"
+  },
+  "src/renderer/_default.page.client.css": {
+    "file": "assets/static/default.page.client.a7f2683c.css",
+    "src": "src/renderer/_default.page.client.css"
+  },
+  "src/renderer/_default.page.client.tsx": {
+    "css": [
+      "assets/static/default.page.client.a7f2683c.css"
+    ],
+    "file": "assets/entries/src_renderer_default.page.client.448165e0.js",
+    "imports": [
+      "_chunk-0e184ced.js",
+      "_chunk-93d9bafa.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/renderer/_default.page.client.tsx"
+  },
+  "src/renderer/_error.page.tsx": {
+    "file": "assets/entries/src_renderer_error.page.2b14f462.js",
+    "imports": [
+      "_chunk-0e184ced.js"
+    ],
+    "isDynamicEntry": true,
+    "isEntry": true,
+    "src": "src/renderer/_error.page.tsx"
+  },
+  "todo-list.webp": {
+    "file": "assets/static/todo-list.c5893cde.webp",
+    "src": "todo-list.webp"
+  },
+  "where-is-waldo.webp": {
+    "file": "assets/static/where-is-waldo.817f727c.webp",
+    "src": "where-is-waldo.webp"
+  }
+}
