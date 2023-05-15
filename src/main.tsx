@@ -5,13 +5,12 @@ import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import Portfolio from "./routes/portfolio";
+import Blog from "./routes/blog";
 
 const router = createBrowserRouter(
   [
-    {
-      path: "/",
-      element: <Portfolio />,
-    },
+    { path: "/", element: <Portfolio /> },
+    { path: "/blog", element: <Blog /> },
   ],
   { basename: "/portfolio" }
 );
