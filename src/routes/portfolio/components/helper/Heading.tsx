@@ -17,7 +17,7 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
         }}
         transition={{
           type: "spring",
-          stiffness: 100,
+          stiffness: 87,
           damping: 24,
           mass: 2,
         }}
