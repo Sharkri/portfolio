@@ -1,13 +1,11 @@
 import StarsScene from "./components/StarsScene";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import About from "./components/About";
 import Projects from "./components/Projects";
 import ContactFooter from "./components/ContactFooter";
 
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import About from "./components/About";
-
-function App() {
+function Portfolio() {
   return (
     <div className="text-white">
       <StarsScene />
@@ -26,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default Portfolio;
