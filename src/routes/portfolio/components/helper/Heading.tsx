@@ -8,7 +8,7 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
         initial={{
           filter: "blur(25px)",
           opacity: 0,
-          y: -70,
+          y: -50,
         }}
         whileInView={{
           filter: "blur(0px)",
@@ -21,7 +21,7 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
           damping: 24,
           mass: 2,
         }}
-        viewport={{ once: true }}
+        viewport={{ once: true, margin: "-90px" }}
         id={id}
         className="text-white font-bold sm:text-3xl text-2xl scroll-mt-20"
       >
