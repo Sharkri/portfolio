@@ -41,7 +41,7 @@ function ProjectItem({ project }: { project: Project }) {
               </span>
               <i
                 className="fa-solid fa-arrow-up rotate-45"
-                aria-label="open link icon"
+                aria-hidden="true"
               />
             </a>
 
@@ -57,7 +57,7 @@ function ProjectItem({ project }: { project: Project }) {
               </span>
               <i
                 className="fa-solid fa-arrow-up rotate-45"
-                aria-label="open link icon"
+                aria-hidden="true"
               />
             </a>
           </div>

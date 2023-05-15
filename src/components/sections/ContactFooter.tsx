@@ -9,8 +9,8 @@ function ContactFooter() {
         <h1 className="text-2xl max-sm:text-xl mb-4 font-bold">Links</h1>
 
         <a href="https://github.com/sharkri" target="_blank" rel="noreferrer">
-          <i className="fa-brands fa-github mr-2" aria-label="github-icon" />
-          Github
+          <i className="fa-brands fa-github mr-2" aria-hidden="true" />
+          My Github Page
         </a>
       </div>
     </footer>
