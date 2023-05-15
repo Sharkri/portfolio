@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import getRandomParticles from "../helper-functions/getRandomParticles";
+import getRandomParticles from "./helper-functions/getRandomParticles";
 
 function StarsScene() {
   const canvasRef = useRef<HTMLCanvasElement>(null);

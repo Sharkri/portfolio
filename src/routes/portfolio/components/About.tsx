@@ -1,5 +1,5 @@
-import TechnologyItem from "../helper/TechnologyItem";
-import Section from "../helper/Section";
+import TechnologyItem from "./helper/TechnologyItem";
+import Section from "./helper/Section";
 
 function About() {
   const technologies = [

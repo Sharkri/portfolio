@@ -1,6 +1,6 @@
-import ProjectItem from "../helper/ProjectItem";
-import projects from "../../projectsArray";
-import Section from "../helper/Section";
+import ProjectItem from "./helper/ProjectItem";
+import projects from "../projectsArray";
+import Section from "./helper/Section";
 
 function Projects() {
   return (

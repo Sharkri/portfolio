@@ -1,4 +1,4 @@
-import Heading from "../helper/Heading";
+import Heading from "./helper/Heading";
 
 function ContactFooter() {
   return (
