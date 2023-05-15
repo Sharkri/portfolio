@@ -13,7 +13,7 @@ function Portfolio() {
       <div className="absolute w-full h-full flex flex-col justify-between">
         <Header />
 
-        <div className="grow flex flex-col gap-14 px-8 max-w-[1440px] mx-auto pt-14">
+        <div className="grow flex flex-col gap-14 px-8 max-w-[1440px] mx-auto pt-12">
           <Hero />
           <About />
           <Projects />

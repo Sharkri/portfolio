@@ -1,19 +1,7 @@
-import { useEffect, useState } from "react";
+import useIsTop from "./helper-functions/useIsTop";
 
 function Header() {
-  const [isTop, setIsTop] = useState(true);
-
-  useEffect(() => {
-    function handleScroll() {
-      setIsTop(window.pageYOffset <= 25);
-    }
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const isTop = useIsTop(25);
 
   return (
     <header
