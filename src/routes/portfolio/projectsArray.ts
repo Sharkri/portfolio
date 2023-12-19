@@ -3,6 +3,7 @@ import Project from "./interfaces/ProjectInterface";
 import waldoImg from "./project-screenshots/where-is-waldo.png?w=668&format=webp&imagetools";
 import todoImg from "./project-screenshots/todo-list.png?w=668&format=webp&imagetools";
 import mediumImg from "./project-screenshots/medium-clone.png?w=668&format=webp&imagetools";
+import cvAppImg from "./project-screenshots/cv-application.png?w=668&format=webp&imagetools";
 
 const projects: Project[] = [
   {
@@ -13,6 +14,15 @@ const projects: Project[] = [
     livePreview: "https://sharkri.github.io/medium-clone",
     image: mediumImg,
     technologies: ["ReactJS", "Typescript", "Firebase", "TailwindCSS"],
+  },
+  {
+    title: "CV Application",
+    description:
+      "An interactive resume builder, with many features, including custom layouts, fonts and colors. Built only using React",
+    githubRepo: "https://github.com/Sharkri/cv-application",
+    livePreview: "https://sharkri.github.io/cv-application",
+    image: cvAppImg,
+    technologies: ["ReactJS"],
   },
   {
     title: "Todo List",
