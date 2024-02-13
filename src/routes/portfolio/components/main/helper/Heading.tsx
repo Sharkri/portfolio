@@ -6,7 +6,7 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
     <>
       <motion.h1
         initial={{
-          filter: "blur(25px)",
+          filter: "blur(18px)",
           opacity: 0,
           y: -50,
         }}
@@ -21,7 +21,7 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
           damping: 24,
           mass: 2,
         }}
-        viewport={{ once: true, margin: "-90px" }}
+        viewport={{ once: true, margin: "-50px" }}
         id={id}
         className="text-white font-bold sm:text-3xl text-2xl scroll-mt-20"
       >

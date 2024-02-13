@@ -51,46 +51,45 @@ function About() {
     <Section
       headingText="About me"
       headingId="about"
-      className="flex flex-wrap justify-center items-start gap-16"
+      className="flex justify-center items-center min-h-[420px]"
     >
-      <div className="space-y-6 max-w-[250px]">
-        <img
-          src="https://avatars.githubusercontent.com/u/95330865"
-          alt=""
-          height={250}
-          width={250}
-          className="rounded-lg"
-        />
-
-        <div className="grid grid-cols-4 gap-y-4">
-          {technologies.map((technology) => (
-            <TechnologyItem
-              name={technology.name}
-              logo={technology.logo}
-              key={technology.name}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className="flex flex-col justify-between gap-8">
-        <div className="tracking-wide text-3xl">
-          <div>
-            <b>{repos.length}</b>{" "}
-            <span className="text-white/80">GitHub repos</span>
-          </div>
-          <div>
-            <b>
-              {size.toFixed()} {suffix}
-            </b>{" "}
-            <span className="text-white/80">of stuff committed</span>
+      <div className="flex flex-wrap items-start gap-16">
+        <div className="space-y-6 max-w-[275px]">
+          <img
+            src="https://avatars.githubusercontent.com/u/95330865"
+            alt=""
+            height={275}
+            width={275}
+            className="rounded-lg"
+          />
+          <div className="grid grid-cols-4 gap-y-4">
+            {technologies.map((technology) => (
+              <TechnologyItem
+                name={technology.name}
+                logo={technology.logo}
+                key={technology.name}
+              />
+            ))}
           </div>
         </div>
-
-        <div className="max-w-[400px]">
-          Hello! I&apos;m Shark. I like to develop websites and sometimes other
-          stuff.. I&apos;ve been programming for about {startYears} years now,
-          and outside of coding, I like to play Tetris.
+        <div className="flex flex-col justify-between gap-8">
+          <div className="tracking-wide text-3xl">
+            <div>
+              <b>{repos.length}</b>{" "}
+              <span className="text-white/80">GitHub repos</span>
+            </div>
+            <div>
+              <b>
+                {size.toFixed()} {suffix}
+              </b>{" "}
+              <span className="text-white/80">of stuff committed</span>
+            </div>
+          </div>
+          <div className="max-w-[400px]">
+            Hello! I&apos;m Shark. I like to develop websites and sometimes
+            other stuff.. I&apos;ve been programming for about {startYears}{" "}
+            years now, and outside of coding, I like to play Tetris!
+          </div>
         </div>
       </div>
     </Section>
