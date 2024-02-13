@@ -1,5 +1,5 @@
 import ProjectItem from "./helper/ProjectItem";
-import projects from "../projectsArray";
+import projects from "../../projectsArray";
 import Section from "./helper/Section";
 
 function Projects() {

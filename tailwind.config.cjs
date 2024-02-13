@@ -27,6 +27,10 @@ export default {
       animation: {
         "text-slide-up": "text-slide-up 0.8s ease-in-out",
       },
+
+      colors: {
+        primary: "#17171f",
+      },
     },
   },
   plugins: [

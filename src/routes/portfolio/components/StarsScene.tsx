@@ -14,7 +14,7 @@ function StarsScene() {
     const loader = new THREE.TextureLoader();
     const scene = new THREE.Scene();
 
-    renderer.setClearColor(new THREE.Color("#1d2c33"));
+    renderer.setClearColor(new THREE.Color("#110e16"));
 
     const light = new THREE.DirectionalLight(0xffffff, 1);
     light.position.set(-1, 2, 4);
@@ -28,23 +28,23 @@ function StarsScene() {
 
     geometries[0].setAttribute(
       "position",
-      new THREE.BufferAttribute(getRandomParticles(450), 3)
+      new THREE.BufferAttribute(getRandomParticles(500), 3)
     );
 
     geometries[1].setAttribute(
       "position",
-      new THREE.BufferAttribute(getRandomParticles(1500), 3)
+      new THREE.BufferAttribute(getRandomParticles(1400), 3)
     );
 
     const materials = [
       new THREE.PointsMaterial({
-        size: 0.075,
+        size: 0.35,
         map: loader.load("assets/images/stars/star1.png"),
         transparent: true,
       }),
 
       new THREE.PointsMaterial({
-        size: 0.1,
+        size: 0.2,
         map: loader.load("assets/images/stars/star2.png"),
         transparent: true,
       }),
@@ -106,7 +106,9 @@ function StarsScene() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed w-full h-full" />;
+  return (
+    <canvas ref={canvasRef} className="absolute z-10 w-full h-screen top-0" />
+  );
 }
 
 export default StarsScene;

@@ -1,4 +1,4 @@
-import Project from "./interfaces/ProjectInterface";
+import Project from "./types/Project";
 
 import waldoImg from "./project-screenshots/where-is-waldo.png?w=668&format=webp&imagetools";
 import todoImg from "./project-screenshots/todo-list.png?w=668&format=webp&imagetools";

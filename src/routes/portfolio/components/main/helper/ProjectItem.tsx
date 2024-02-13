@@ -1,4 +1,4 @@
-import Project from "../../interfaces/ProjectInterface";
+import Project from "../../../types/Project";
 
 function ProjectItem({ project }: { project: Project }) {
   return (
