@@ -1,4 +1,4 @@
-import Project from "../../../types/Project";
+import Project from "../../../../../types/Project";
 
 function ProjectItem({ project }: { project: Project }) {
   return (

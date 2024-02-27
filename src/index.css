@@ -7,3 +7,20 @@ html {
   scroll-behavior: smooth;
   font-family: "Inter", sans-serif;
 }
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.blog-post-card-content::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 13em;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, #0000 0%, #080808 100%);
+  pointer-events: none;
+}

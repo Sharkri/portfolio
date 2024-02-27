@@ -7,10 +7,10 @@ import Footer from "./components/main/Footer";
 
 function Portfolio() {
   return (
-    <div className="text-white">
+    <div className="text-gray-50">
       <StarsScene />
 
-      <div className="absolute w-full h-full flex flex-col justify-between">
+      <div className="w-full h-full flex flex-col justify-between">
         <Header />
 
         <div className="grow flex flex-col gap-14 px-8 pt-12 bg-primary">

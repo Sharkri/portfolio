@@ -50,5 +50,6 @@ export default {
       addVariant("child", "& > *");
       addVariant("child-hover", "& > *:hover");
     }),
+    require("@tailwindcss/typography"),
   ],
 };

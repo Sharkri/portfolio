@@ -12,14 +12,18 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "axios": "^1.6.7",
     "date-fns": "^3.3.1",
     "framer-motion": "^10.10.0",
+    "isomorphic-dompurify": "^2.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
     "three": "^0.151.2"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.11.20",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/three": "^0.150.1",

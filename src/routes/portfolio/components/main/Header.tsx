@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useIsTop from "../helper-functions/useIsTop";
 
 function Header() {
@@ -12,6 +13,7 @@ function Header() {
       <nav className="flex items-center gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
+        <Link to="/blog">Blog</Link>
       </nav>
     </header>
   );
