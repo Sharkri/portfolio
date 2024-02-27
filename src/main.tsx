@@ -6,11 +6,13 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import Portfolio from "./routes/portfolio";
 import Blog from "./routes/blog";
+import BlogPost from "./routes/blog/blog-post";
 
 const router = createBrowserRouter(
   [
     { path: "/", element: <Portfolio /> },
     { path: "/blog", element: <Blog /> },
+    { path: "/blog/:id", element: <BlogPost /> },
   ],
   { basename: "/portfolio" }
 );

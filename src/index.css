@@ -11,7 +11,7 @@ html {
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
 }
 
 .blog-post-card-content::after {
@@ -23,4 +23,11 @@ body,
   bottom: 0;
   background: linear-gradient(to bottom, #0000 0%, #080808 100%);
   pointer-events: none;
+}
+
+@layer base {
+  html {
+    @apply bg-primary;
+    @apply text-gray-50;
+  }
 }

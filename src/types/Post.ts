@@ -1,4 +1,3 @@
-import { Image } from "./Image";
 import { User } from "./User";
 
 export type Comment = {
@@ -15,7 +14,5 @@ export type Post = {
   topics?: string[];
   isPublished?: boolean;
   blogContents: string;
-  description: string;
-  image: Image | null;
   _id: string;
 };

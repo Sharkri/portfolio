@@ -7,13 +7,13 @@ import Footer from "./components/main/Footer";
 
 function Portfolio() {
   return (
-    <div className="text-gray-50">
+    <div>
       <StarsScene />
 
       <div className="w-full h-full flex flex-col justify-between">
         <Header />
 
-        <div className="grow flex flex-col gap-14 px-8 pt-12 bg-primary">
+        <div className="grow flex flex-col gap-14 px-8 pt-12">
           <Hero />
           <div className="max-w-[1440px] mx-auto flex-flex-col space-y-16">
             <About />
