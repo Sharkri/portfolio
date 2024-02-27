@@ -4,6 +4,7 @@ import axios from "axios";
 import { sanitize } from "isomorphic-dompurify";
 import { Post } from "../../types/Post";
 import NotFound from "./components/404";
+import BlogHeader from "./components/blog-header";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -27,14 +28,16 @@ export default function BlogPost() {
     getPostById();
   }, [params.id]);
 
-  if (loading) return <div>loading stuff</div>;
+  if (loading) return null;
   if (!post) return <NotFound />;
 
   const createdAt = new Date(post.createdAt);
 
   return (
-    <div className="w-full h-full py-12 px-8">
-      <div className="max-w-[1108px] mx-auto">
+    <div className="w-full h-full">
+      <BlogHeader />
+
+      <div className="max-w-[1108px] py-12 px-8 mx-auto">
         <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg shadow">
           <div className="px-6 pb-4">
             <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
@@ -45,7 +48,6 @@ export default function BlogPost() {
               </span>
             </p>
           </div>
-
           <div
             className="max-w-none prose prose-invert bg-[#0D0D0D] p-6"
             // eslint-disable-next-line react/no-danger
