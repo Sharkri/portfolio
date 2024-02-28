@@ -4,6 +4,9 @@ export type Comment = {
   name: string;
   text: string;
   replies: Comment[];
+  _id: string;
+  clientIp: string;
+  createdAt: string;
 };
 
 export type Post = {

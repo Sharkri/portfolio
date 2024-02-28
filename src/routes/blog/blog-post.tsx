@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { sanitize } from "isomorphic-dompurify";
+import { Helmet } from "react-helmet";
 import { Post } from "../../types/Post";
 import NotFound from "./components/404";
 import BlogHeader from "./components/blog-header";
 import Topics from "./components/topics";
+import BlogComments from "./components/blog.comments.";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -37,9 +39,12 @@ export default function BlogPost() {
   return (
     <div className="w-full h-full">
       <BlogHeader />
+      <Helmet>
+        <title>{post.title} | Portfolio</title>
+      </Helmet>
 
       <div className="max-w-[1108px] py-12 px-8 mx-auto">
-        <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg shadow">
+        <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow-lg border border-zinc-800">
           <header className="flex justify-between gap-4 px-6 pb-4">
             <div>
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
@@ -59,6 +64,10 @@ export default function BlogPost() {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: sanitize(post.blogContents) }}
           />
+
+          <footer className="p-6">
+            <BlogComments post={post} />
+          </footer>
         </div>
       </div>
     </div>
