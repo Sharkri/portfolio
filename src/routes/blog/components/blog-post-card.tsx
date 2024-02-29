@@ -1,7 +1,7 @@
-import { sanitize } from "isomorphic-dompurify";
 import { Link } from "react-router-dom";
 import { Post } from "../../../types/Post";
 import Topics from "./topics";
+import BlogContent from "./blog-content";
 
 export default function BlogPostCard({ post }: { post: Post }) {
   const createdAt = new Date(post.createdAt);
@@ -14,7 +14,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
             <Link to={`/blog/${post._id}`}>{post.title}</Link>
           </h1>
           <p className="text-gray-400 text-sm">
-            by {post.author.displayName} at{" "}
+            by <b className="text-indigo-400">{post.author.displayName}</b> at{" "}
             <span title={createdAt.toUTCString()}>
               {createdAt.toLocaleDateString()}
             </span>
@@ -24,10 +24,9 @@ export default function BlogPostCard({ post }: { post: Post }) {
         <Topics topics={post.topics} />
       </div>
 
-      <div
-        className="blog-post-card-content max-w-none prose prose-invert bg-[#0D0D0D] relative p-6 overflow-hidden max-h-60"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: sanitize(post.blogContents) }}
+      <BlogContent
+        className="blog-post-card-content relative overflow-hidden max-h-60"
+        blogContents={post.blogContents}
       />
     </div>
   );

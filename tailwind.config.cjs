@@ -13,6 +13,15 @@ export default {
     },
 
     extend: {
+      typography: ({ theme }) => ({
+        indigo: {
+          css: {
+            "--tw-prose-links": theme("colors.indigo[400]"),
+            "--tw-prose-invert-links": theme("colors.indigo[400]"),
+          },
+        },
+      }),
+
       keyframes: {
         shudder: {
           from: { transform: "rotate(-0.1deg)" },
@@ -29,6 +38,7 @@ export default {
       },
     },
   },
+
   plugins: [
     plugin(function ({ addVariant, addUtilities }) {
       addUtilities({

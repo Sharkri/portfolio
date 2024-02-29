@@ -22,5 +22,6 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": 0,
     "no-underscore-dangle": 0,
+    "react/require-default-props": 0,
   },
 };

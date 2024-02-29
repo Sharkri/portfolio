@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { sanitize } from "isomorphic-dompurify";
 import { Helmet } from "react-helmet";
 import publicIP from "react-native-public-ip";
 import { Post } from "../../types/Post";
@@ -9,6 +8,7 @@ import NotFound from "./components/404";
 import BlogHeader from "./components/blog-header";
 import Topics from "./components/topics";
 import BlogComments from "./components/blog.comments.";
+import BlogContent from "./components/blog-content";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -50,12 +50,13 @@ export default function BlogPost() {
       </Helmet>
 
       <div className="max-w-[1108px] py-12 px-8 mx-auto">
-        <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow-lg border border-zinc-800">
+        <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow border border-zinc-800">
           <header className="flex justify-between gap-4 px-6 pb-4">
             <div>
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
               <p className="text-gray-400 text-sm">
-                by {post.author.displayName} at{" "}
+                by <b className="text-indigo-400">{post.author.displayName}</b>{" "}
+                at{" "}
                 <span title={createdAt.toUTCString()}>
                   {createdAt.toLocaleDateString()}
                 </span>
@@ -65,16 +66,14 @@ export default function BlogPost() {
             <Topics topics={post.topics} />
           </header>
 
-          <main
-            className="max-w-none prose prose-invert bg-[#0D0D0D] p-6"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: sanitize(post.blogContents) }}
-          />
-
-          <footer className="p-6 mt-6 pt-6 border-t border-t-zinc-700">
-            <BlogComments post={post} ip={ip} />
-          </footer>
+          <main>
+            <BlogContent blogContents={post.blogContents} />
+          </main>
         </div>
+
+        <footer className="my-5">
+          <BlogComments post={post} ip={ip} />
+        </footer>
       </div>
     </div>
   );

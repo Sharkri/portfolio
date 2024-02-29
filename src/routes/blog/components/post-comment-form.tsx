@@ -41,13 +41,13 @@ export default function PostCommentForm({
         e.preventDefault();
         handleSubmit();
       }}
-      className="flex flex-col max-w-md"
+      className="flex flex-col max-w-sm"
     >
       <ReactTextareaAutosize
         placeholder="Write a comment"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="rounded-md shadow-sm bg-zinc-950/60 border-zinc-950/100 resize-none min-h-[80px]"
+        className="rounded-t-lg shadow-sm bg-zinc-950/60 border-transparent resize-none min-h-[4em] focus:border-zinc-800 focus:ring-0"
         maxLength={1500}
         required
       />
@@ -55,7 +55,7 @@ export default function PostCommentForm({
       <button
         type="submit"
         disabled={loading}
-        className="rounded-md bg-zinc-800 p-2 focus:border-zinc-600 disabled:brightness-[0.8]"
+        className="rounded-b-lg text-sm bg-zinc-800 p-2 focus:border-zinc-600 disabled:brightness-[0.8]"
       >
         Submit
       </button>
