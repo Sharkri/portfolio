@@ -14,18 +14,14 @@ export default {
 
     extend: {
       keyframes: {
-        "text-slide-up": {
-          from: {
-            transform: "translateY(100%)",
-          },
-          to: {
-            transform: "translateY(0%)",
-          },
+        shudder: {
+          from: { transform: "rotate(-0.1deg)" },
+          to: { transform: "rotate(0.1deg)" },
         },
       },
 
       animation: {
-        "text-slide-up": "text-slide-up 0.8s ease-in-out",
+        shudder: "0.01s shudder infinite alternate linear",
       },
 
       colors: {

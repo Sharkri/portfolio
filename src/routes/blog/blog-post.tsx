@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { sanitize } from "isomorphic-dompurify";
 import { Helmet } from "react-helmet";
+import publicIP from "react-native-public-ip";
 import { Post } from "../../types/Post";
 import NotFound from "./components/404";
 import BlogHeader from "./components/blog-header";
@@ -15,6 +16,7 @@ export default function BlogPost() {
   const params = useParams();
   const [post, setPost] = useState<null | Post>(null);
   const [loading, setLoading] = useState(true);
+  const [ip, setIp] = useState<string | null>(null);
 
   useEffect(() => {
     const getPostById = async () => {
@@ -31,7 +33,11 @@ export default function BlogPost() {
     getPostById();
   }, [params.id]);
 
-  if (loading) return null;
+  useEffect(() => {
+    publicIP().then(setIp);
+  }, []);
+
+  if (loading || !ip) return null;
   if (!post) return <NotFound />;
 
   const createdAt = new Date(post.createdAt);
@@ -65,8 +71,8 @@ export default function BlogPost() {
             dangerouslySetInnerHTML={{ __html: sanitize(post.blogContents) }}
           />
 
-          <footer className="p-6">
-            <BlogComments post={post} />
+          <footer className="p-6 mt-6 pt-6 border-t border-t-zinc-700">
+            <BlogComments post={post} ip={ip} />
           </footer>
         </div>
       </div>

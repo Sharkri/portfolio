@@ -3,7 +3,7 @@ import { Comment, Post } from "../../../types/Post";
 import BlogComment from "./blog-comment";
 import PostCommentForm from "./post-comment-form";
 
-export default function BlogComments({ post }: { post: Post }) {
+export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
   const [comments, setComments] = useState(post.comments);
 
   return (
@@ -19,7 +19,14 @@ export default function BlogComments({ post }: { post: Post }) {
 
       <div className="flex flex-col gap-8">
         {comments.map((comment) => (
-          <BlogComment comment={comment} key={comment._id} />
+          <BlogComment
+            comment={comment}
+            key={comment._id}
+            clientIp={ip}
+            onDelete={() =>
+              setComments((prev) => prev.filter((c) => comment._id !== c._id))
+            }
+          />
         ))}
       </div>
     </div>
