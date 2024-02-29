@@ -1,10 +1,16 @@
+import BlogHeader from "./blog-header";
+
 export default function NotFound() {
   return (
-    <div className="bg-primary gap-6 w-full h-full flex flex-col justify-center items-center p-10 text-gray-50">
-      <h1 className="text-8xl font-bold">404</h1>
-      <p className="text-2xl">
-        This page does not exist. Verify your query is correct.
-      </p>
+    <div className="bg-primary w-full h-full text-gray-50">
+      <BlogHeader />
+
+      <div className="p-10 flex flex-col gap-6 justify-center items-center">
+        <h1 className="text-8xl font-bold">404</h1>
+        <p className="text-2xl">
+          This page does not exist. Verify your query is correct.
+        </p>
+      </div>
     </div>
   );
 }
