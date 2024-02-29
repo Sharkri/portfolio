@@ -8,7 +8,7 @@ export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
 
   return (
     <div className="space-y-8">
-      <h2 className="font-bold text-2xl">Comments ({post.comments.length})</h2>
+      <h2 className="font-bold text-2xl">Comments ({comments.length})</h2>
 
       <PostCommentForm
         postId={post._id}
