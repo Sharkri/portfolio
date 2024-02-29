@@ -6,10 +6,12 @@ import DeleteCommentButton from "./delete-comment-button";
 const { VITE_API_URL } = import.meta.env;
 
 export default function BlogComment({
+  postId,
   comment,
   clientIp,
   onDelete,
 }: {
+  postId: string;
   comment: Comment;
   clientIp: string;
   onDelete: () => void;
@@ -20,7 +22,9 @@ export default function BlogComment({
 
   const deleteComment = async () => {
     try {
-      await axios.delete(`${VITE_API_URL}/api/posts/comments/${comment._id}`);
+      await axios.delete(
+        `${VITE_API_URL}/api/posts/${postId}/comments/${comment._id}`
+      );
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
@@ -31,13 +35,14 @@ export default function BlogComment({
     // only delete if clicked twice
     if (!firstClick) {
       setFirstClick(true);
-      return;
-    }
+    } else {
+      setDeleting(true);
 
-    setDeleting(true);
-    await deleteComment();
-    onDelete();
-    setDeleting(false);
+      await deleteComment();
+      onDelete();
+
+      setDeleting(false);
+    }
   };
 
   return (

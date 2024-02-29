@@ -20,6 +20,7 @@ export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
       <div className="flex flex-col gap-8">
         {comments.map((comment) => (
           <BlogComment
+            postId={post._id}
             comment={comment}
             key={comment._id}
             clientIp={ip}
