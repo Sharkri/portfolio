@@ -46,7 +46,7 @@ export default function BlogPost() {
     <div className="w-full h-full">
       <BlogHeader />
       <Helmet>
-        <title>{post.title} | Portfolio</title>
+        <title>{post.title} | Shark</title>
       </Helmet>
 
       <div className="max-w-[1108px] py-12 px-8 mx-auto">

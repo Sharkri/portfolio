@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import StarsScene from "./components/StarsScene";
 import Header from "./components/main/Header";
 import Hero from "./components/main/Hero";
@@ -8,6 +9,9 @@ import Footer from "./components/main/Footer";
 function Portfolio() {
   return (
     <div>
+      <Helmet>
+        <title>Shark - Web Developer</title>
+      </Helmet>
       <StarsScene />
 
       <div className="w-full h-full flex flex-col justify-between">

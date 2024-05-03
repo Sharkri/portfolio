@@ -2,17 +2,7 @@ function Footer() {
   return (
     <footer className="pb-8 pt-6 border-slate-700 border-t">
       <div className="flex justify-center gap-4">
-        <div>
-          Made by{" "}
-          <a
-            href="https://github.com/sharkri"
-            className="hover:underline text-blue-300"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Shark
-          </a>
-        </div>
+        <div>My project is also open-source:</div>
 
         <a
           href="https://github.com/sharkri/portfolio"
