@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { HelmetProvider } from "react-helmet-async";
 
 import Portfolio from "./routes/portfolio";
 import Blog from "./routes/blog";
@@ -19,6 +20,8 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>
 );

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import StarsScene from "./components/StarsScene";
 import Header from "./components/main/Header";
 import Hero from "./components/main/Hero";

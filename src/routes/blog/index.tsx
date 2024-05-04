@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import BlogHeader from "./components/blog-header";
 import BlogPosts from "./components/blog-posts";
 

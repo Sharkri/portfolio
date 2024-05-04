@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import publicIP from "react-native-public-ip";
 import { Post } from "../../types/Post";
 import NotFound from "./components/404";
