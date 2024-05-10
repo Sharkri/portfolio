@@ -2,7 +2,7 @@ function Footer() {
   return (
     <footer className="pb-8 pt-6 border-slate-700 border-t">
       <div className="flex justify-center gap-4">
-        <div>My project is also open-source:</div>
+        <div>My portfolio is also open-source:</div>
 
         <a
           href="https://github.com/sharkri/portfolio"

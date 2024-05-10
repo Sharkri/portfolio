@@ -4,12 +4,13 @@ import waldoImg from "./project-screenshots/where-is-waldo.png?w=668&format=webp
 import todoImg from "./project-screenshots/todo-list.png?w=668&format=webp&imagetools";
 import mediumImg from "./project-screenshots/medium-clone.png?w=668&format=webp&imagetools";
 import cvAppImg from "./project-screenshots/cv-application.png?w=668&format=webp&imagetools";
+import pokeMemoImg from "./project-screenshots/pokememo.png?w=668&format=webp&imagetools";
 
 const projects: Project[] = [
   {
     title: "Medium Clone",
     description:
-      "A platform for writers to share their articles (markdown supported) and read articles from other writers",
+      "A platform for writers to share their articles (markdown supported) and read articles from other writers. Articles are also saved via Firebase, with real-time updates.",
     githubRepo: "Sharkri/medium-clone",
     livePreview: "https://sharkri.github.io/medium-clone",
     image: mediumImg,
@@ -23,6 +24,15 @@ const projects: Project[] = [
     livePreview: "https://sharkri.github.io/cv-application",
     image: cvAppImg,
     technologies: ["ReactJS"],
+  },
+  {
+    title: "PokéMemo",
+    description:
+      "A retro pokemon themed memory game, it features over 1,000 unique pokemon via PokeAPI. You can test your memory on three difficulties, and if you finished the level, you can choose to keep playing too. There's also sfx & bgm included!\n\nP.S. if you're lucky, you might find a shiny :)",
+    githubRepo: "Sharkri/pokememo",
+    livePreview: "https://sharkri.github.io/pokememo",
+    image: pokeMemoImg,
+    technologies: ["ReactJS", "howler.js", "PokeAPI", "nes.css"],
   },
   {
     title: "Todo List",

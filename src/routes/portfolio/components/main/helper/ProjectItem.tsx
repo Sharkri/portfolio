@@ -24,7 +24,7 @@ function ProjectItem({ project }: { project: Project }) {
         <div className="flex-[50%] overflow-hidden">
           <img
             src={project.image}
-            className="brightness-[0.8] hover:brightness-90 hover:scale-105 transition duration-300"
+            className="brightness-90 hover:brightness-100 hover:scale-105 transition duration-300"
             alt=""
             loading="lazy"
           />
@@ -33,7 +33,9 @@ function ProjectItem({ project }: { project: Project }) {
         <div className="flex-[50%] flex flex-col gap-6">
           <div>
             <h1 className="text-lg font-bold">Summary</h1>
-            <p className="text-white/80">{project.description}</p>
+            <p className="text-white/80 whitespace-pre-wrap">
+              {project.description}
+            </p>
 
             {stars > 0 && (
               <div
