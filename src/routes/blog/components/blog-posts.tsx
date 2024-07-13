@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import BlogPostCard from "./blog-post-card";
 import { Post } from "../../../types/Post";
+import Spinner from "../../../components/Spinner";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -18,8 +19,8 @@ export default function BlogPosts() {
 
   if (posts == null)
     return (
-      <div className="flex justify-center text-lg items-center gap-3">
-        Fetching blog posts...
+      <div className="flex justify-center text-gray-200 items-center">
+        <Spinner /> Loading blogs...
       </div>
     );
 

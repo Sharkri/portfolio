@@ -10,7 +10,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
     <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg border border-gray-800">
       <div className="flex justify-between gap-4 px-6 pb-4">
         <div>
-          <h1 className="text-3xl mb-1 font-bold">
+          <h1 className="text-2xl mb-1 font-bold">
             <Link to={`/blog/${post._id}`}>{post.title}</Link>
           </h1>
           <p className="text-gray-400 text-sm">
