@@ -42,8 +42,8 @@ function ProjectItem({ project }: { project: Project }) {
                 className="flex items-center gap-1 mt-2"
                 title={`${stars} Stargazers`}
               >
-                <StarIcon className="w-6 h-6 text-yellow-600" />
-                <p className="text-white/90 text-lg">
+                <StarIcon className="w-5 h-5 text-[#daaa3f]" />
+                <p className="text-white/90">
                   <span className="font-bold">{stars}</span>
                 </p>
               </div>

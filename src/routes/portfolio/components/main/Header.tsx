@@ -11,8 +11,7 @@ function Header() {
       } text-gray-300 font-bold transition-[color,transform] duration-200 flex justify-end`}
     >
       <nav className="flex items-center gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
+        <Link to="/">Portfolio</Link>
         <Link to="/blog">Blog</Link>
       </nav>
     </header>

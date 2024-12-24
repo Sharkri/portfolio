@@ -19,3 +19,9 @@ export type Post = {
   blogContents: string;
   _id: string;
 };
+
+export type PreviewPost = {
+  title: string;
+  _id: string;
+  createdAt: string;
+};
