@@ -50,7 +50,7 @@ export default function BlogPost() {
       </Helmet>
 
       <div className="max-w-[1108px] py-12 px-8 mx-auto">
-        <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow border border-zinc-800">
+        <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow">
           <header className="flex justify-between gap-4 px-6 pb-4">
             <div>
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
