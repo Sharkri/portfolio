@@ -2,6 +2,8 @@ import { differenceInYears } from "date-fns";
 import Section from "./helper/Section";
 import TechnologyItem from "./helper/TechnologyItem";
 
+const { BASE_URL } = import.meta.env;
+
 const technologies = [
   { name: "JavaScript", logo: "assets/images/logos/javascript-logo.svg" },
   { name: "Typescript", logo: "assets/images/logos/typescript-logo.svg" },
@@ -40,7 +42,7 @@ function About() {
             {technologies.map((technology) => (
               <TechnologyItem
                 name={technology.name}
-                logo={technology.logo}
+                logo={BASE_URL + technology.logo}
                 key={technology.name}
               />
             ))}

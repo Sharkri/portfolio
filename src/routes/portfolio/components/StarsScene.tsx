@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import getRandomParticles from "./helper-functions/getRandomParticles";
 
+const { BASE_URL } = import.meta.env;
+
 function StarsScene() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
@@ -39,13 +41,13 @@ function StarsScene() {
     const materials = [
       new THREE.PointsMaterial({
         size: 0.075,
-        map: loader.load("assets/images/stars/star1.png"),
+        map: loader.load(`${BASE_URL}assets/images/stars/star1.png`),
         transparent: true,
       }),
 
       new THREE.PointsMaterial({
         size: 0.1,
-        map: loader.load("assets/images/stars/star2.png"),
+        map: loader.load(`${BASE_URL}assets/images/stars/star2.png`),
         transparent: true,
       }),
     ];
