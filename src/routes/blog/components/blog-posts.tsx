@@ -11,8 +11,14 @@ export default function BlogPosts() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get(`${VITE_API_URL}/api/posts`);
-      setPosts(res.data);
+      try {
+        const res = await axios.get(`${VITE_API_URL}/api/posts`);
+        setPosts(res.data);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        setPosts([]);
+      }
     };
     fetchPosts();
   }, []);
@@ -23,6 +29,14 @@ export default function BlogPosts() {
         <Spinner /> Loading blogs...
       </div>
     );
+
+  if (posts.length === 0) {
+    return (
+      <div>
+        <p className="text-lg">No blog posts yet! :(</p>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-8">

@@ -34,7 +34,7 @@ function About() {
             Hello! I&apos;m Shark. I usually develop websites and sometimes
             other stuff. I&apos;ve been programming for about {startYears} years
             now, and outside of coding, I like to play a bit of puzzle games and
-            write blogs.
+            write blogs occasionally.
           </div>
           <div className="grid grid-cols-[repeat(4,65px)] gap-y-4">
             {technologies.map((technology) => (
