@@ -5,4 +5,7 @@
 
 This is my portfolio with a Blog! [(Live link)](https://sharkri.github.io/portfolio)
 
-Note: Blog will take 1-3 minutes to cold-start due to my Blog API being hosted on a free tier from Render.
+Links:
+
+- [Blog CMS](https://github.com/Sharkri/blog-api-cms)
+- [Blog API](https://github.com/Sharkri/blog-api)
