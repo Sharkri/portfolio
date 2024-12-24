@@ -9,7 +9,7 @@ export default function BlogContent({
 }) {
   return (
     <div
-      className={`max-w-none prose prose-invert prose-indigo bg-[#0D0D0D] p-6 ${className}`}
+      className={`max-w-none prose prose-invert prose-indigo bg-[#0D0D0D] p-8 ${className}`}
       // eslint-disable-next-line react/no-danger
       dangerouslySetInnerHTML={{ __html: sanitize(blogContents) }}
     />

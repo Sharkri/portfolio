@@ -7,7 +7,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
   const createdAt = new Date(post.createdAt);
 
   return (
-    <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg">
+    <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg brightness">
       <div className="flex justify-between gap-4 px-6 pb-4">
         <div>
           <h1 className="text-2xl mb-1 font-bold">
@@ -25,7 +25,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
       </div>
 
       <BlogContent
-        className="blog-post-card-content relative overflow-hidden max-h-60"
+        className="blog-post-card-content relative overflow-hidden max-h-60 brightness-90 rounded-b-lg"
         blogContents={post.blogContents}
       />
     </div>

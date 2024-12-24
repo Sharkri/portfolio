@@ -49,7 +49,7 @@ export default function BlogPost() {
         <title>{post.title} | Shark</title>
       </Helmet>
 
-      <div className="max-w-[1108px] py-12 px-8 mx-auto">
+      <div className="max-w-[1108px] mt-20 py-12 px-8 mx-auto">
         <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow">
           <header className="flex justify-between gap-4 px-6 pb-4">
             <div>
@@ -71,7 +71,7 @@ export default function BlogPost() {
           </main>
         </div>
 
-        <footer className="my-5">
+        <footer className="my-8">
           <BlogComments post={post} ip={ip} />
         </footer>
       </div>
