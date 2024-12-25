@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
 import publicIP from "react-native-public-ip";
@@ -50,6 +50,13 @@ export default function BlogPost() {
       </Helmet>
 
       <div className="max-w-[1108px] mt-20 py-12 px-8 mx-auto">
+        <Link
+          to="/blog"
+          className="font-bold ml-4 mb-2 text-zinc-600 hover:text-zinc-400 transition-colors duration-200"
+        >
+          back to index
+        </Link>
+
         <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow">
           <header className="flex justify-between gap-4 px-6 pb-4">
             <div>
