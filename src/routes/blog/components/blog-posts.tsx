@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link, useSearchParams } from "react-router-dom";
 import BlogPostCard from "./blog-post-card";
 import { Post } from "../../../types/Post";
 import Spinner from "../../../components/Spinner";
@@ -7,6 +8,9 @@ import Spinner from "../../../components/Spinner";
 const { VITE_API_URL } = import.meta.env;
 
 export default function BlogPosts() {
+  const [searchParams] = useSearchParams();
+  const topic = searchParams.get("t");
+
   const [posts, setPosts] = useState<null | Post[]>(null);
 
   useEffect(() => {
@@ -38,11 +42,30 @@ export default function BlogPosts() {
     );
   }
 
+  const filteredPosts = topic
+    ? posts.filter((post) => post.topics?.includes(topic))
+    : posts;
+
   return (
     <div className="flex flex-col gap-8">
-      {posts.map((post) => (
-        <BlogPostCard post={post} key={post._id} />
-      ))}
+      {topic !== null && (
+        <div>
+          <Link
+            to="/blog"
+            className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+          >
+            Reset filters
+          </Link>
+        </div>
+      )}
+
+      {filteredPosts.length ? (
+        filteredPosts.map((post) => <BlogPostCard post={post} key={post._id} />)
+      ) : (
+        <div>
+          <p className="text-xl">No results found with that topic...</p>
+        </div>
+      )}
     </div>
   );
 }
