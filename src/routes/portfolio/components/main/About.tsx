@@ -26,7 +26,7 @@ function About() {
       <div className="flex flex-wrap gap-16 max-md:gap-8 justify-center">
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">
           <img
-            src="/assets/images/leafeon.png"
+            src="/portfolio/assets/images/leafeon.png"
             alt=""
             className="rounded-lg w-[250px]"
           />
