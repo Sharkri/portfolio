@@ -43,7 +43,7 @@ function About() {
             <span className="text-emerald-200">fullstack developer</span> and
             I&apos;ve been programming for about {startYears} years now. Outside
             of coding, I like learning languages, drawing things, stoats, piano,
-            knot theory,{" "}
+            chess, knot theory,{" "}
             <a
               className="text-muted underline underline-offset-2 hover:text-foreground"
               href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"

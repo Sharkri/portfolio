@@ -33,7 +33,7 @@ export default function LatestPosts() {
   }
 
   if (posts.length === 0) {
-    return <div className="py-5">No blogs yet...</div>;
+    return <div className="py-5 text-muted">No blogs yet...</div>;
   }
 
   const latestPosts = posts.slice(0, 3);
