@@ -13,6 +13,9 @@ export default {
     },
 
     extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },
       typography: ({ theme }) => ({
         indigo: {
           css: {
@@ -35,6 +38,8 @@ export default {
 
       colors: {
         primary: "#17171f",
+        muted: "rgba(255, 255, 255, 0.8)",
+        foreground: "#f9fafb",
       },
     },
   },

@@ -24,4 +24,5 @@ module.exports = {
     "no-underscore-dangle": 0,
     "react/require-default-props": 0,
   },
+  ignorePatterns: ["tailwind.config.cjs"],
 };

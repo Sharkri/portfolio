@@ -10,7 +10,7 @@ function Portfolio() {
   return (
     <div>
       <Helmet>
-        <title>Portfolio | Shark</title>
+        <title>sharkri&apos;s portfolio</title>
       </Helmet>
       <StarsScene />
 

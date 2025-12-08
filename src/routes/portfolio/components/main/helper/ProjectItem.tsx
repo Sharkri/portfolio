@@ -18,10 +18,8 @@ function ProjectItem({ project }: { project: Project }) {
 
   return (
     <div className="flex flex-col gap-8 border-b border-b-white/50 last:border-b-0 last:pb-0 mb-7 pb-8">
-      <h1 className="text-xl font-bold">{project.title}</h1>
-
       <div className="flex max-lg:flex-col gap-6">
-        <div className="flex-[50%] overflow-hidden">
+        <div className="flex-[40%] overflow-hidden">
           <img
             src={project.image}
             className="brightness-90 hover:brightness-100 hover:scale-105 transition duration-300"
@@ -30,16 +28,28 @@ function ProjectItem({ project }: { project: Project }) {
           />
         </div>
 
-        <div className="flex-[50%] flex flex-col gap-6">
+        <div className="flex-[60%] flex flex-col gap-6">
           <div>
-            <h1 className="text-lg font-bold">Summary</h1>
-            <p className="text-white/80 whitespace-pre-wrap">
+            <h1 className="text-lg font-bold mb-2.5">{project.title}</h1>
+
+            <p className="text-muted whitespace-pre-wrap mb-2.5">
               {project.description}
             </p>
 
+            <div className="text-muted text-sm flex flex-wrap gap-2.5">
+              {project.technologies.map((technology) => (
+                <span
+                  key={technology}
+                  className="py-0.5 px-2.5 bg-neutral-800 rounded-full"
+                >
+                  {technology}
+                </span>
+              ))}
+            </div>
+
             {stars > 0 && (
               <div
-                className="flex items-center gap-1 mt-2"
+                className="flex items-center gap-1 mt-2.5"
                 title={`${stars} Stargazers`}
               >
                 <StarIcon className="w-5 h-5 text-[#daaa3f]" />
@@ -48,13 +58,6 @@ function ProjectItem({ project }: { project: Project }) {
                 </p>
               </div>
             )}
-          </div>
-
-          <div>
-            <h1 className="text-lg font-bold">Technologies</h1>
-            <span className="text-white/80">
-              {project.technologies.join(", ")}
-            </span>
           </div>
 
           <div className="flex gap-6 font-bold">

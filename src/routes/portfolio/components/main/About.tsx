@@ -23,21 +23,38 @@ function About() {
       headingId="about"
       className="flex flex-col justify-center items-center h-[70vh] max-h-[1280px] gap-8"
     >
-      <div className="flex flex-wrap gap-16 justify-center max-md:gap-8">
+      <div className="flex flex-wrap gap-16 max-md:gap-8 justify-center">
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">
           <img
-            src="https://avatars.githubusercontent.com/u/95330865"
+            src="/assets/images/leafeon.png"
             alt=""
-            className="rounded-lg"
+            className="rounded-lg w-[250px]"
           />
+          <span className="text-xs text-muted">the best pokemon ^^^</span>
         </div>
         <div className="flex flex-col justify-between gap-8">
           <div className="max-w-[400px] lg:text-lg">
-            Hello! I&apos;m Shark. I usually develop websites and sometimes
-            other stuff. I&apos;ve been programming for about {startYears} years
-            now, and outside of coding, I like to play a bit of puzzle games and
-            write blogs occasionally.
+            hi! i&apos;m{" "}
+            <ruby>
+              <span className="text-emerald-200">shark</span>
+              <rt className="text-xs text-muted">シャーク</rt>
+            </ruby>
+            . I am a{" "}
+            <span className="text-emerald-200">fullstack developer</span> and
+            I&apos;ve been programming for about {startYears} years now. Outside
+            of coding, I like learning languages, drawing things, stoats, piano,
+            knot theory,{" "}
+            <a
+              className="text-muted underline underline-offset-2 hover:text-foreground"
+              href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
+              target="_blank"
+              rel="noreferrer"
+            >
+              spsa
+            </a>
+            , tetr.io, pokemon mystery dungeon, and other stuff!
           </div>
+
           <div className="grid grid-cols-[repeat(4,65px)] gap-y-4">
             {technologies.map((technology) => (
               <TechnologyItem

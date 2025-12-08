@@ -4,7 +4,7 @@ import Section from "./helper/Section";
 
 function Projects() {
   return (
-    <Section headingText="Projects" headingId="projects">
+    <Section headingText="Cool stuff I've made" headingId="projects">
       {projects.map((project) => (
         <ProjectItem project={project} key={project.title} />
       ))}

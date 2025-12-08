@@ -6,7 +6,7 @@ function Blog() {
   return (
     <div className="h-full w-full">
       <Helmet>
-        <title>Blog Posts | Shark</title>
+        <title>sharkri&apos;s blog posts</title>
       </Helmet>
       <BlogHeader />
       <div className="max-w-[1108px] mx-auto px-8 pt-12">

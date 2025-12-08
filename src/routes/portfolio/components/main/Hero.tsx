@@ -6,7 +6,7 @@ function Hero() {
     <div className="flex-col-center max-w-[960px] mx-auto w-full min-h-[95vh] relative z-20">
       <div>
         <h1 className="text-7xl max-md:text-6xl font-bold text-center mb-8">
-          hi, i&apos;m Shark.
+          hi, i&apos;m <span className="text-emerald-200">shark</span>.
         </h1>
 
         <div className="flex flex-col border border-gray-800/80 px-5 py-6 pb-0 rounded-sm w-[90%] mx-auto">
