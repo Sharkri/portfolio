@@ -45,7 +45,7 @@ function About() {
             of coding, I like learning languages, drawing things, stoats, piano,
             chess, knot theory,{" "}
             <a
-              className="text-muted underline underline-offset-2 hover:text-foreground"
+              className="text-foreground/80 underline underline-offset-2 hover:text-foreground"
               href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
               target="_blank"
               rel="noreferrer"

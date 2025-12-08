@@ -19,7 +19,7 @@ export default function DeleteCommentButton({
       type="button"
       onClick={onClick}
       onMouseLeave={onMouseLeave}
-      className="text-zinc-400 hover:text-red-400 transition"
+      className="text-muted hover:text-red-400 transition"
       title="Delete this comment (click twice)"
     >
       {text}

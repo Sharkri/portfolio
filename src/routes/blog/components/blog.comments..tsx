@@ -9,7 +9,7 @@ export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
   return (
     <div>
       <h2 className="flex items-center gap-2 my-4 pb-4 border-b border-zinc-600 border-dashed">
-        <span className="text-zinc-400">Comments</span>
+        <span className="text-muted">Comments</span>
         <span className="text-sm text-zinc-500">({comments.length})</span>
       </h2>
 
@@ -36,9 +36,7 @@ export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
             />
           ))
         ) : (
-          <p className="text-sm text-zinc-400">
-            no comments yet... be the first!
-          </p>
+          <p className="text-sm text-muted">no comments yet... be the first!</p>
         )}
       </div>
     </div>

@@ -52,7 +52,7 @@ export default function BlogPost() {
       <div className="max-w-[1108px] mt-20 py-12 px-8 mx-auto">
         <Link
           to="/blog"
-          className="font-bold ml-4 mb-2 text-zinc-600 hover:text-zinc-400 transition-colors duration-200"
+          className="font-bold ml-4 mb-2 text-zinc-600 hover:text-muted transition-colors duration-200"
         >
           back to index
         </Link>
@@ -62,8 +62,7 @@ export default function BlogPost() {
             <div>
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
               <p className="text-gray-400 text-sm">
-                by <b className="text-indigo-400">{post.author.displayName}</b>{" "}
-                at{" "}
+                by <b className="text-accent">{post.author.displayName}</b> at{" "}
                 <span title={createdAt.toUTCString()}>
                   {createdAt.toLocaleDateString()}
                 </span>

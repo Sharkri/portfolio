@@ -55,7 +55,7 @@ export default function PostCommentForm({
       className="flex flex-col max-w-sm gap-4"
     >
       <div className="flex flex-col space-y-1">
-        <label className="text-sm font-medium text-zinc-400" htmlFor="name">
+        <label className="text-sm font-medium text-muted" htmlFor="name">
           Name
         </label>
         <input
@@ -72,7 +72,7 @@ export default function PostCommentForm({
       </div>
 
       <div className="flex flex-col gap-1">
-        <label className="text-sm font-medium text-zinc-400" htmlFor="comment">
+        <label className="text-sm font-medium text-muted" htmlFor="comment">
           Comment
         </label>
         <div className="flex">

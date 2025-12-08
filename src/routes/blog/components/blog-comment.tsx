@@ -58,7 +58,7 @@ export default function BlogComment({
       >
         <span>
           <span className="font-bold">{comment.name} </span>
-          <span className="text-gray-300">at {createdAt.toLocaleString()}</span>
+          <span className="text-muted">at {createdAt.toLocaleString()}</span>
         </span>
         {comment.clientIp === clientIp && (
           <DeleteCommentButton
