@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState, useEffect, KeyboardEvent } from "react";
 
 export type ComboboxOption<T = string> = {
   value: T;
@@ -31,6 +31,10 @@ export default function Combobox<T = string>({
 }: ComboboxProps<T>) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number>(-1);
+
+  const listRef = useRef<HTMLDivElement | null>(null);
+  const itemRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
   const selectedLabel = useMemo(() => {
     const found = options.find((o) => o.value === value);
@@ -44,8 +48,72 @@ export default function Combobox<T = string>({
         : options.filter((o) =>
             o.label.toLowerCase().includes(query.toLowerCase())
           );
-    return base.slice(0, maxVisibleOptions);
+    return typeof maxVisibleOptions === "number"
+      ? base.slice(0, maxVisibleOptions)
+      : base;
   }, [options, query, maxVisibleOptions]);
+
+  // Reset item refs when options change length
+  useEffect(() => {
+    itemRefs.current = [];
+  }, [filteredOptions.length]);
+
+  // Auto-scroll active item into view when activeIndex changes
+  useEffect(() => {
+    if (!listRef.current || activeIndex < 0) return;
+
+    const activeEl = itemRefs.current[activeIndex];
+    if (!activeEl) return;
+
+    activeEl.scrollIntoView({
+      block: "nearest",
+    });
+  }, [activeIndex]);
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "ArrowDown") {
+      if (!open) setOpen(true);
+      if (filteredOptions.length === 0) return;
+
+      e.preventDefault();
+      setActiveIndex((prev) =>
+        prev < filteredOptions.length - 1 ? prev + 1 : 0
+      );
+      return;
+    }
+
+    if (e.key === "ArrowUp") {
+      if (!open) setOpen(true);
+      if (filteredOptions.length === 0) return;
+
+      e.preventDefault();
+      setActiveIndex((prev) =>
+        prev > 0 ? prev - 1 : filteredOptions.length - 1
+      );
+      return;
+    }
+
+    if (e.key === "Enter") {
+      if (!open || filteredOptions.length === 0) return;
+
+      e.preventDefault();
+      const option =
+        activeIndex >= 0 ? filteredOptions[activeIndex] : filteredOptions[0];
+
+      if (!option) return;
+
+      onChange(option.value);
+      setQuery("");
+      setOpen(false);
+      setActiveIndex(-1);
+      return;
+    }
+
+    if (e.key === "Escape") {
+      setOpen(false);
+      setActiveIndex(-1);
+    }
+  };
 
   return (
     <div className={`flex flex-col space-y-1 relative ${className}`}>
@@ -61,31 +129,85 @@ export default function Combobox<T = string>({
           setQuery(e.target.value);
           onChange(null);
           setOpen(true);
+          setActiveIndex(0);
         }}
-        onFocus={() => setOpen(true)}
-        onBlur={() => setTimeout(() => setOpen(false), 100)}
+        onFocus={() => {
+          setOpen(true);
+          if (filteredOptions.length > 0) {
+            setActiveIndex(0);
+          }
+        }}
+        onBlur={() =>
+          setTimeout(() => {
+            setOpen(false);
+            setActiveIndex(-1);
+
+            const trimmed = query.trim();
+            if (!trimmed) {
+              return;
+            }
+
+            // Try to find an exact match by label or value (case-insensitive)
+            const exactMatch = options.find((option) => {
+              const labelMatch =
+                option.label.toLowerCase() === trimmed.toLowerCase();
+              const valueMatch =
+                String(option.value).toLowerCase() === trimmed.toLowerCase();
+              return labelMatch || valueMatch;
+            });
+
+            if (exactMatch) {
+              // Commit the selection
+              onChange(exactMatch.value);
+              setQuery(""); // let selectedLabel drive the input
+            } else {
+              // Clear invalid text so it's visually obvious nothing was selected
+              onChange(null);
+              setQuery("");
+            }
+          }, 100)
+        }
+        onKeyDown={handleKeyDown}
         placeholder={placeholder}
         className="rounded-lg bg-zinc-950/60 border-transparent focus:border-zinc-800 focus:ring-0 disabled:brightness-[0.8]"
         disabled={disabled}
         autoComplete="off"
       />
 
-      {open && filteredOptions.length > 0 && (
-        <div className="absolute top-full z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-zinc-800 bg-zinc-950 shadow-lg">
-          {filteredOptions.map((o) => (
-            <button
-              key={String(o.value)}
-              type="button"
-              className="w-full text-left px-3 py-2 text-sm hover:bg-zinc-800"
-              onMouseDown={() => {
-                onChange(o.value);
-                setQuery("");
-                setOpen(false);
-              }}
-            >
-              {o.label}
-            </button>
-          ))}
+      {open && (
+        <div
+          ref={listRef}
+          className="absolute top-full z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-zinc-800 bg-zinc-950 shadow-lg"
+        >
+          {filteredOptions.length > 0 ? (
+            filteredOptions.map((option, i) => (
+              <button
+                ref={(el) => {
+                  itemRefs.current[i] = el;
+                }}
+                key={String(option.value)}
+                type="button"
+                className={`w-full text-left px-3 py-2 text-sm ${
+                  i === activeIndex
+                    ? "bg-zinc-800 text-white"
+                    : "hover:bg-zinc-800"
+                }`}
+                onMouseEnter={() => setActiveIndex(i)}
+                onMouseDown={() => {
+                  onChange(option.value);
+                  setQuery("");
+                  setOpen(false);
+                  setActiveIndex(-1);
+                }}
+              >
+                {option.label}
+              </button>
+            ))
+          ) : (
+            <div className="px-3 py-2 text-sm text-zinc-400">
+              No Pokemon found.
+            </div>
+          )}
         </div>
       )}
     </div>
