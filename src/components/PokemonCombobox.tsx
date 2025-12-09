@@ -26,11 +26,13 @@ export default function PokemonCombobox({
   return (
     <Combobox
       id="pokemon"
-      label="Pokemon (optional)"
+      label="Favorite Pokemon (optional)"
       value={value || null}
       onChange={(val) => onChange(val ?? "")}
       options={options}
-      placeholder={loading ? "Loading Pokemon..." : "Search Pokemon..."}
+      placeholder={
+        loading ? "Loading Pokemon..." : "Search for your favorite pokemon..."
+      }
       disabled={effectiveDisabled}
     />
   );
