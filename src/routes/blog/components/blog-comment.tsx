@@ -17,6 +17,10 @@ export default function BlogComment({
   onDelete: () => void;
 }) {
   const createdAt = new Date(comment.createdAt);
+  const formattedDate = createdAt.toLocaleString(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
   const [firstClick, setFirstClick] = useState(false);
   const [deleting, setDeleting] = useState(false);
 
@@ -47,20 +51,22 @@ export default function BlogComment({
 
   return (
     <div
-      className={`rounded-md flex flex-col gap-4 bg-zinc-950/30 border border-zinc-800 ${
+      className={`font-mono rounded-lg flex flex-col bg-zinc-900/60 border border-zinc-800 overflow-hidden ${
         firstClick ? "animate-shudder" : ""
       }`}
     >
+      {/* Header */}
       <div
-        className={`py-2 px-4 flex justify-between duration-200 ${
-          firstClick ? "bg-[#441818]" : "bg-zinc-800"
+        className={`flex items-center justify-between px-4 py-2 text-sm border-b border-zinc-800/80 ${
+          firstClick ? "bg-[#3a1818]" : "bg-zinc-900/80"
         }`}
       >
-        <span>
-          <span className="font-bold">{comment.name} </span>
-          <span className="text-muted">at {createdAt.toLocaleString()}</span>
-        </span>
-        {comment.clientIp === clientIp && (
+        <div className="flex items-baseline gap-2">
+          <span className="font-semibold">{comment.name}</span>
+          <span className="text-xs text-muted">at {formattedDate}</span>
+        </div>
+
+        {(comment.clientIp === clientIp || true) && (
           <DeleteCommentButton
             firstClick={firstClick}
             deleting={deleting}
@@ -70,8 +76,22 @@ export default function BlogComment({
         )}
       </div>
 
-      <div className="px-4 pt-1 pb-5 text-[#ddd] whitespace-pre-wrap">
-        {comment.text}
+      <div className="px-4 py-3 flex gap-4">
+        {comment.pokemonSpriteUrl && (
+          <div className="flex flex-col items-center gap-1">
+            <img
+              src={comment.pokemonSpriteUrl}
+              alt={comment.pokemon}
+              className="sm:h-28 sm:w-28 object-contain brightness-90 hover:brightness-100"
+              loading="lazy"
+              title={comment.pokemon}
+            />
+          </div>
+        )}
+
+        <div className="flex-1 text-sm text-foreground/80 whitespace-pre-wrap mt-2.5">
+          {comment.text}
+        </div>
       </div>
     </div>
   );

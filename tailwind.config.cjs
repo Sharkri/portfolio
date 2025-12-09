@@ -14,7 +14,8 @@ export default {
 
     extend: {
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+        mono: ["'Source Code Pro'", "monospace"],
       },
       typography: ({ theme }) => ({
         accent: {

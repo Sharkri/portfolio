@@ -19,9 +19,26 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/assets/fonts/SourceCodePro-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 200 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  src: url("/assets/fonts/SourceCodePro-Italic-VariableFont_wght.ttf")
+    format("truetype");
+  font-weight: 200 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: smooth;
-  font-family: "Inter", sans-serif;
 }
 
 html,

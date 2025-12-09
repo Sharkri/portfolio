@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link, useSearchParams } from "react-router-dom";
 import BlogPostCard from "./blog-post-card";
 import { Post } from "../../../types/Post";
-import Spinner from "../../../components/Spinner";
+import Spinner from "../../../components/ui/Spinner";
 
 const { VITE_API_URL } = import.meta.env;
 

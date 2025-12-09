@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
 import { Comment } from "../../../types/Post";
+import PokemonCombobox from "../../../components/PokemonCombobox";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -14,6 +15,7 @@ export default function PostCommentForm({
   postId: string;
   onCommentAdd: (comment: Comment) => void;
 }) {
+  const [pokemon, setPokemon] = useState("");
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
@@ -21,11 +23,12 @@ export default function PostCommentForm({
   const resetInputs = () => {
     setText("");
     setName("");
+    setPokemon("");
   };
 
   const handleSubmit = async () => {
     if (!text || !name) return;
-    const body = { name, text };
+    const body = { name, text, pokemon };
 
     setLoading(true);
 
@@ -52,8 +55,14 @@ export default function PostCommentForm({
         e.preventDefault();
         handleSubmit();
       }}
-      className="flex flex-col max-w-sm gap-4"
+      className="flex flex-col gap-4"
     >
+      <PokemonCombobox
+        value={pokemon}
+        onChange={setPokemon}
+        disabled={loading}
+      />
+
       <div className="flex flex-col space-y-1">
         <label className="text-sm font-medium text-muted" htmlFor="name">
           Name
@@ -62,6 +71,7 @@ export default function PostCommentForm({
           id="name"
           type="text"
           placeholder="Enter a name"
+          autoComplete="off"
           className="rounded-lg bg-zinc-950/60 border-transparent focus:border-zinc-800 focus:ring-0 disabled:brightness-[0.8]"
           value={name}
           onChange={(e) => setName(e.target.value)}

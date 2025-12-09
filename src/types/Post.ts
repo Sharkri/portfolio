@@ -7,6 +7,8 @@ export type Comment = {
   _id: string;
   clientIp: string;
   createdAt: string;
+  pokemon?: string;
+  pokemonSpriteUrl?: string;
 };
 
 export type Post = {
