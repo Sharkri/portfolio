@@ -66,7 +66,7 @@ export default function BlogComment({
           <span className="text-xs text-muted">at {formattedDate}</span>
         </div>
 
-        {(comment.clientIp === clientIp || true) && (
+        {comment.clientIp === clientIp && (
           <DeleteCommentButton
             firstClick={firstClick}
             deleting={deleting}
