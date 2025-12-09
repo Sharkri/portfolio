@@ -21,7 +21,10 @@ const socials = [
 
 function Hero() {
   return (
-    <div className="flex-col-center max-w-[960px] mx-auto w-full min-h-[95vh] relative z-20">
+    <div
+      className="flex-col-center max-w-[960px] mx-auto w-full min-h-[95vh] relative z-20"
+      id="hero"
+    >
       <div>
         <h1 className="text-7xl max-md:text-6xl font-bold text-center mb-8">
           hi, i&apos;m <span className="text-emerald-200">shark</span>.
