@@ -11,8 +11,8 @@ export default function NotFound() {
         <img src="/assets/images/sadcat.gif" alt="" width={250} />
         <p className="text-xl text-muted">
           This page doesn&apos;t exist.{" "}
-          <Link to="/blog" className="underline hover:text-foreground">
-            Back to blogs
+          <Link to="/" className="underline hover:text-foreground text-lg">
+            Back to main page
           </Link>
         </p>
       </div>

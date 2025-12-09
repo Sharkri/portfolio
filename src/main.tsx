@@ -8,12 +8,14 @@ import { HelmetProvider } from "react-helmet-async";
 import Portfolio from "./routes/portfolio";
 import Blog from "./routes/blog";
 import BlogPost from "./routes/blog/blog-post";
+import NotFound from "./routes/blog/components/404";
 
 const router = createBrowserRouter(
   [
     { path: "/", element: <Portfolio /> },
     { path: "/blog", element: <Blog /> },
     { path: "/blog/:id", element: <BlogPost /> },
+    { path: "*", element: <NotFound /> },
   ],
   { basename: "/portfolio" }
 );
