@@ -8,7 +8,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
 
   return (
     <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg brightness">
-      <div className="flex justify-between gap-4 px-6 pb-4">
+      <div className="flex flex-wrap justify-between gap-4 px-6 pb-4">
         <div>
           <h1 className="text-2xl mb-1 font-bold">
             <Link to={`/blog/${post._id}`}>{post.title}</Link>

@@ -52,13 +52,13 @@ export default function BlogPost() {
       <div className="max-w-[1108px] mt-20 py-12 px-8 mx-auto">
         <Link
           to="/blog"
-          className="font-bold ml-4 mb-2 text-zinc-600 hover:text-muted transition-colors duration-200"
+          className="underline font-bold ml-4 mb-2 text-muted hover:text-foreground transition-colors duration-200"
         >
           back to index
         </Link>
 
         <div className="bg-zinc-900 flex flex-col pt-5 rounded-lg shadow">
-          <header className="flex justify-between gap-4 px-6 pb-4">
+          <header className="flex flex-wrap justify-between gap-4 px-6 pb-4">
             <div>
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
               <p className="text-gray-400 text-sm">
