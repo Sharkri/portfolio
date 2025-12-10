@@ -48,8 +48,7 @@ export default function LatestPosts() {
             to={`/blog/${post._id}`}
             key={post._id}
             className={`border-b py-5 border-gray-800
-        ${index === 1 ? "max-sm:hidden" : ""}
-        ${index >= 2 ? "max-lg:hidden" : ""}
+        ${index >= 2 ? "max-sm:hidden" : ""}
       `}
           >
             <p className="font-bold mb-0.5">{post.title}</p>

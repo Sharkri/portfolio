@@ -9,7 +9,7 @@ function Blog() {
         <title>sharkri&apos;s blog posts</title>
       </Helmet>
       <BlogHeader />
-      <div className="max-w-[1108px] mx-auto px-8 pt-12">
+      <div className="max-w-[1108px] mx-auto px-6 pt-12">
         <BlogPosts />
       </div>
     </div>
