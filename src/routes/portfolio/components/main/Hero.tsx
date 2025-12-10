@@ -22,7 +22,7 @@ const socials = [
 function Hero() {
   return (
     <div
-      className="flex-col-center max-w-[960px] mx-auto w-full min-h-[95vh] relative z-20"
+      className="flex-col-center max-w-[960px] mx-auto h-[95dvh] w-full relative z-20"
       id="hero"
     >
       <div>

@@ -40,14 +40,17 @@ export default function LatestPosts() {
 
   return (
     <>
-      {latestPosts.map((post) => {
+      {latestPosts.map((post, index) => {
         const postDate = new Date(post.createdAt);
         const formattedDate = format(postDate, "MMM d, yyyy");
         return (
           <Link
             to={`/blog/${post._id}`}
             key={post._id}
-            className="border-b py-5 border-gray-800"
+            className={`border-b py-5 border-gray-800
+        ${index === 1 ? "max-sm:hidden" : ""}
+        ${index >= 2 ? "max-lg:hidden" : ""}
+      `}
           >
             <p className="font-bold mb-0.5">{post.title}</p>
             <p className="text-sm text-gray-300">{formattedDate}</p>

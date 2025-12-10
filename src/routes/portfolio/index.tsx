@@ -19,7 +19,7 @@ function Portfolio() {
 
         <div className="grow flex flex-col gap-14 md:gap-20 px-8 pt-12">
           <Hero />
-          <div className="max-w-[1440px] mx-auto flex-flex-col space-y-16">
+          <div className="max-w-[1440px] mx-auto flex-flex-col space-y-8 sm:space-y-24">
             <About />
             <Projects />
             <Footer />

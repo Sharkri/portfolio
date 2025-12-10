@@ -21,7 +21,7 @@ function About() {
     <Section
       headingText="A bit about me"
       headingId="about"
-      className="flex flex-col justify-center items-center h-[70vh] max-h-[1280px] gap-8"
+      className="flex flex-col justify-center items-center max-h-[1280px] gap-8"
     >
       <div className="flex flex-wrap gap-16 max-md:gap-8 justify-center">
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">

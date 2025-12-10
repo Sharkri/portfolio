@@ -23,7 +23,7 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
         }}
         viewport={{ once: true, margin: "-50px" }}
         id={id}
-        className="text-white font-bold sm:text-3xl text-2xl scroll-mt-20"
+        className="text-white font-bold sm:text-3xl text-2xl scroll-mt-20 max-sm:scroll-mt-8"
       >
         {children}
       </motion.h1>

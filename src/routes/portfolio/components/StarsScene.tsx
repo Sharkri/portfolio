@@ -109,11 +109,7 @@ function StarsScene() {
   }, []);
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="absolute z-10 w-full top-0"
-      style={{ height: "100dvh" }}
-    />
+    <canvas ref={canvasRef} className="absolute z-10 w-full h-[100dvh] top-0" />
   );
 }
 
