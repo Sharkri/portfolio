@@ -46,7 +46,7 @@ export default function BlogComment({
       >
         <div className="flex items-baseline gap-2">
           <span
-            className="font-semibold"
+            className="font-semibold transition-colors"
             style={accentColor ? { color: accentColor } : undefined}
           >
             {comment.name}
