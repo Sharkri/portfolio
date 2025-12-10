@@ -1,10 +1,26 @@
 import { useState } from "react";
+import axios from "axios";
 import { Comment, Post } from "../../../types/Post";
 import BlogComment from "./blog-comment";
 import PostCommentForm from "./post-comment-form";
 
+const { VITE_API_URL } = import.meta.env;
+
 export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
   const [comments, setComments] = useState(post.comments);
+
+  const deleteComment = async (commentId: string) => {
+    try {
+      await axios.delete(
+        `${VITE_API_URL}/api/posts/${post._id}/comments/${commentId}`
+      );
+
+      setComments((prev) => prev.filter((c) => commentId !== c._id));
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
+  };
 
   return (
     <div>
@@ -26,13 +42,10 @@ export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
         {comments.length > 0 ? (
           comments.map((comment) => (
             <BlogComment
-              postId={post._id}
-              comment={comment}
               key={comment._id}
+              comment={comment}
               clientIp={ip}
-              onDelete={() =>
-                setComments((prev) => prev.filter((c) => comment._id !== c._id))
-              }
+              onDelete={async () => deleteComment(comment._id)}
             />
           ))
         ) : (

@@ -26,7 +26,7 @@ export default function PokemonCombobox({
   return (
     <Combobox
       id="pokemon"
-      label="Favorite Pokemon (optional)"
+      label="Pokemon (optional)"
       value={value || null}
       onChange={(val) => onChange(val ?? "")}
       options={options}

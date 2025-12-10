@@ -7,7 +7,7 @@ import { Post } from "../../types/Post";
 import NotFound from "./components/404";
 import BlogHeader from "./components/blog-header";
 import Topics from "./components/topics";
-import BlogComments from "./components/blog.comments.";
+import BlogComments from "./components/blog-comments";
 import BlogContent from "./components/blog-content";
 
 const { VITE_API_URL } = import.meta.env;
