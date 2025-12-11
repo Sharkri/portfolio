@@ -51,8 +51,8 @@ export default function LatestPosts() {
         ${index >= 2 ? "max-sm:hidden" : ""}
       `}
           >
-            <p className="font-bold mb-0.5">{post.title}</p>
-            <p className="text-sm text-gray-300">{formattedDate}</p>
+            <p className="font-bold mb-0.5 font-mono">{post.title}</p>
+            <p className="text-sm text-gray-300 font-mono">{formattedDate}</p>
           </Link>
         );
       })}

@@ -4,6 +4,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import BlogPostCard from "./blog-post-card";
 import { Post } from "../../../types/Post";
 import Spinner from "../../../components/ui/Spinner";
+import getColorFromString from "../../../lib/color-from-string";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -43,7 +44,9 @@ export default function BlogPosts() {
   }
 
   const filteredPosts = topic
-    ? posts.filter((post) => post.topics?.includes(topic))
+    ? posts.filter((post) =>
+        post.topics?.some((t) => t.toLowerCase() === topic.toLowerCase())
+      )
     : posts;
 
   return (
@@ -52,9 +55,15 @@ export default function BlogPosts() {
         <div>
           <Link
             to="/blog"
-            className="text-gray-400 hover:text-gray-200 transition-colors duration-200"
+            className="text-muted hover:brightness-150  transition duration-200"
           >
-            Reset filters
+            show all posts as opposed to just those tagged with{" "}
+            <span
+              className="bg-zinc-800 rounded-full py-1 px-2.5 text-sm font-mono lowercase"
+              style={{ color: getColorFromString(topic) }}
+            >
+              {topic}
+            </span>
           </Link>
         </div>
       )}

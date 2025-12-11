@@ -13,6 +13,7 @@ export default function BlogPostCard({ post }: { post: Post }) {
           <h1 className="text-2xl mb-1 font-bold">
             <Link to={`/blog/${post._id}`}>{post.title}</Link>
           </h1>
+
           <p className="text-gray-400 text-sm">
             by <b className="text-accent">{post.author.displayName}</b> at{" "}
             <span title={createdAt.toUTCString()}>
