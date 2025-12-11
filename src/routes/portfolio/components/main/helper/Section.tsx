@@ -14,8 +14,8 @@ function Section({
   className?: string;
 }) {
   return (
-    <section>
-      <Heading id={headingId}>{headingText}</Heading>
+    <section className="scroll-mt-20" id={headingId}>
+      <Heading>{headingText}</Heading>
 
       <motion.div
         initial={{

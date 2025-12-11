@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 
-function Heading({ children, id }: { children: ReactNode; id: string }) {
+function Heading({ children, id }: { children: ReactNode; id?: string }) {
   return (
     <>
       <motion.h1
@@ -23,11 +23,11 @@ function Heading({ children, id }: { children: ReactNode; id: string }) {
         }}
         viewport={{ once: true, margin: "-50px" }}
         id={id}
-        className="text-white font-bold sm:text-3xl text-2xl scroll-mt-20 max-sm:scroll-mt-8"
+        className="text-white font-bold sm:text-3xl text-2xl"
       >
         {children}
       </motion.h1>
-      <div className="border-b border-b-white/50 my-7" />
+      <div className="border-b border-b-white/50 my-5 sm:my-7" />
     </>
   );
 }
