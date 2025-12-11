@@ -5,11 +5,9 @@ import useAccentColor from "../../../components/hooks/useAccentColor";
 
 export default function BlogComment({
   comment,
-  clientIp,
   onDelete,
 }: {
   comment: Comment;
-  clientIp: string;
   onDelete: () => Promise<void>;
 }) {
   const formattedDate = new Date(comment.createdAt).toLocaleString(undefined, {
@@ -54,7 +52,7 @@ export default function BlogComment({
           <span className="text-xs text-muted">at {formattedDate}</span>
         </div>
 
-        {comment.clientIp === clientIp && (
+        {comment.canDelete && (
           <DeleteCommentButton
             firstClick={firstClick}
             deleting={deleting}

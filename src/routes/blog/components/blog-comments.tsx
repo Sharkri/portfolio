@@ -6,7 +6,7 @@ import PostCommentForm from "./post-comment-form";
 
 const { VITE_API_URL } = import.meta.env;
 
-export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
+export default function BlogComments({ post }: { post: Post }) {
   const [comments, setComments] = useState(post.comments);
 
   const deleteComment = async (commentId: string) => {
@@ -44,7 +44,6 @@ export default function BlogComments({ post, ip }: { post: Post; ip: string }) {
             <BlogComment
               key={comment._id}
               comment={comment}
-              clientIp={ip}
               onDelete={async () => deleteComment(comment._id)}
             />
           ))

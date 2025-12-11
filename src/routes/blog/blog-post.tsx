@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
-import publicIP from "react-native-public-ip";
 import { Post } from "../../types/Post";
 import NotFound from "./components/404";
 import BlogHeader from "./components/blog-header";
@@ -16,7 +15,6 @@ export default function BlogPost() {
   const params = useParams();
   const [post, setPost] = useState<null | Post>(null);
   const [loading, setLoading] = useState(true);
-  const [ip, setIp] = useState<string | null>(null);
 
   useEffect(() => {
     const getPostById = async () => {
@@ -33,11 +31,7 @@ export default function BlogPost() {
     getPostById();
   }, [params.id]);
 
-  useEffect(() => {
-    publicIP().then(setIp);
-  }, []);
-
-  if (loading || !ip) return null;
+  if (loading) return null;
   if (!post) return <NotFound />;
 
   const createdAt = new Date(post.createdAt);
@@ -78,7 +72,7 @@ export default function BlogPost() {
         </div>
 
         <footer className="my-8">
-          <BlogComments post={post} ip={ip} />
+          <BlogComments post={post} />
         </footer>
       </div>
     </div>

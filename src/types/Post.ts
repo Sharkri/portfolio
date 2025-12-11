@@ -5,7 +5,7 @@ export type Comment = {
   text: string;
   replies: Comment[];
   _id: string;
-  clientIp: string;
+  canDelete: boolean;
   createdAt: string;
   pokemon?: string;
   pokemonSpriteUrl?: string;
