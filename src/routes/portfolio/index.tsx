@@ -16,6 +16,7 @@ function Portfolio() {
 
       <div className="w-full h-full flex flex-col justify-between">
         <Header />
+        <div id="top" />
 
         <div className="grow flex flex-col gap-14 md:gap-20 px-8 pt-12">
           <Hero />

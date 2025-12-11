@@ -13,7 +13,7 @@ function Header() {
       <nav className="flex items-center gap-4 justify-between">
         <div>
           <a
-            href="#hero"
+            href="#top"
             className="flex items-center gap-2 hover:text-gray-200 hover:text-shadow-lg transition-colors duration-300"
             title="shark / homepage"
           >
