@@ -27,10 +27,12 @@ function About() {
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">
           <img
             src="/portfolio/assets/images/leafeon.png"
-            alt=""
+            alt="Leafeon"
             className="rounded-lg w-[250px]"
           />
-          <span className="text-xs text-muted">the best pokemon ^^^</span>
+          <span className="text-xs text-muted font-mono">
+            my fav pokemon ^^
+          </span>
         </div>
         <div className="flex flex-col justify-between gap-8">
           <div className="max-w-[400px] lg:text-lg">
