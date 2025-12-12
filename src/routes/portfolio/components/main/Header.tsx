@@ -21,7 +21,7 @@ function Header() {
           </a>
         </div>
 
-        <div className="flex items-center gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300">
+        <div className="flex items-center gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300 font-mono">
           <a href="#about">about</a>
           <a href="#projects">projects</a>
           <Link to="/blog">blog</Link>

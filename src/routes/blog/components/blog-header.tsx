@@ -12,7 +12,9 @@ export default function BlogHeader() {
           シャーク
         </Link>
 
-        <Link to="/blog">blog</Link>
+        <Link to="/blog" className="font-mono">
+          blog
+        </Link>
       </nav>
     </header>
   );

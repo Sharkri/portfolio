@@ -38,7 +38,7 @@ export default function BlogPosts() {
   if (posts.length === 0) {
     return (
       <div>
-        <p className="text-lg text-muted">No blog posts yet...</p>
+        <p className="text-lg text-muted font-mono">no blog posts yet...</p>
       </div>
     );
   }

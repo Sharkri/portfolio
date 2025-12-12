@@ -4,9 +4,7 @@ function TechnologyItem({ logo, name }: { logo: string; name: string }) {
       src={logo}
       alt={name}
       title={name}
-      width={36}
-      height={36}
-      className="m-auto object-cover duration-500 hover:translate-y-[-2px]"
+      className="m-auto object-cover duration-500 hover:translate-y-[-2px] max-h-9 w-9 max-sm:max-h-8 max-sm:w-8"
     />
   );
 }
