@@ -1,9 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactTextareaAutosize from "react-textarea-autosize";
 import clsx from "clsx";
 import { FormComment } from "../../../types/Post";
 import PokemonCombobox from "../../../components/PokemonCombobox";
 import Checkbox from "../../../components/ui/Checkbox";
+
+const STORAGE_KEY = "postCommentRemember";
+
+const saveLocalStorageData = (name: string, pokemon: string) =>
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ name, pokemon }));
+
+const clearLocalStorageData = () => localStorage.removeItem(STORAGE_KEY);
 
 export default function PostCommentForm({
   onSubmit,
@@ -17,11 +24,14 @@ export default function PostCommentForm({
   const [text, setText] = useState("");
   const [expanded, setExpanded] = useState(isReply);
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
 
-  const resetInputs = () => {
+  const resetForm = () => {
     setText("");
-    setName("");
-    setPokemon("");
+    if (!rememberMe) {
+      setName("");
+      setPokemon("");
+    }
   };
 
   const handleSubmit = async () => {
@@ -32,14 +42,31 @@ export default function PostCommentForm({
     try {
       const body = { name, text, pokemon };
       await onSubmit(body);
+
+      if (rememberMe) saveLocalStorageData(name, pokemon);
+      else clearLocalStorageData();
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
     } finally {
-      resetInputs();
       setLoading(false);
+      resetForm();
     }
   };
+
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (!saved) return;
+
+    try {
+      const parsed = JSON.parse(saved);
+      setName(parsed.name ?? "");
+      setPokemon(parsed.pokemon ?? "");
+      setRememberMe(true);
+    } catch {
+      // ignore corrupted storage
+    }
+  }, []);
 
   return (
     <form
@@ -99,7 +126,11 @@ export default function PostCommentForm({
         </div>
 
         <div className="flex items-center gap-2 ml-auto">
-          <Checkbox label="remember me" />
+          <Checkbox
+            label="remember me"
+            checked={rememberMe}
+            onChange={(e) => setRememberMe(e.target.checked)}
+          />
           <button
             type="submit"
             disabled={loading}

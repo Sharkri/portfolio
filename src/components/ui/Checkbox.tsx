@@ -28,8 +28,7 @@ export default function Checkbox({
         className={clsx(
           "h-4 w-4 rounded border-zinc-700 bg-zinc-950/60 outline-none ring-0 ring-offset-0",
           "focus:outline-none focus:ring-0 focus:ring-offset-0 active:outline-none active:ring-0",
-          "text-emerald-600 focus-visible:ring-1",
-          disabled && "cursor-not-allowed"
+          "text-emerald-600 focus-visible:ring-1 cursor-pointer disabled:cursor-not-allowed"
         )}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...props}
