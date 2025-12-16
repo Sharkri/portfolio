@@ -48,8 +48,8 @@ export default function BlogComment({
       <div>
         {checkRepliesPopulated(comment.replies) &&
           // sort from oldest to newest
-          comment.replies
-            .toSorted((a, b) => +new Date(a.createdAt) - +new Date(b.createdAt))
+          [...comment.replies]
+            .sort((a, b) => +new Date(a.createdAt) - +new Date(b.createdAt))
             .map((reply) => (
               <BlogComment
                 comment={reply}
