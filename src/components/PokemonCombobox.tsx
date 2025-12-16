@@ -30,10 +30,9 @@ export default function PokemonCombobox({
       value={value || null}
       onChange={(val) => onChange(val ?? "")}
       options={options}
-      placeholder={
-        loading ? "Loading Pokemon..." : "Search for your favorite pokemon..."
-      }
+      placeholder={loading ? "Loading Pokemon..." : "Pokemon (optional)"}
       disabled={effectiveDisabled}
+      size="sm"
     />
   );
 }

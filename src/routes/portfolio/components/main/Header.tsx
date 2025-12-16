@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 import useIsTop from "../helper-functions/useIsTop";
 
 function Header() {
@@ -6,9 +7,10 @@ function Header() {
 
   return (
     <header
-      className={`w-full h-[64px] fixed top-0 z-30 px-8 py-4 ${
+      className={clsx(
+        "w-full h-[64px] fixed top-0 z-30 px-8 py-4 text-gray-300 font-bold transition-[color,transform] duration-200",
         isTop ? "translate-y-2" : "bg-[rgb(28,28,39,0.9)]"
-      } text-gray-300 font-bold transition-[color,transform] duration-200`}
+      )}
     >
       <nav className="flex items-center gap-4 justify-between">
         <div>

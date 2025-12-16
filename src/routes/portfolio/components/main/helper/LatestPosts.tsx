@@ -2,6 +2,7 @@ import axios from "axios";
 import { format } from "date-fns";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import clsx from "clsx";
 import { PreviewPost } from "../../../../../types/Post";
 import Spinner from "../../../../../components/ui/Spinner";
 
@@ -47,9 +48,10 @@ export default function LatestPosts() {
           <Link
             to={`/blog/${post._id}`}
             key={post._id}
-            className={`border-b py-5 border-gray-800
-        ${index >= 2 ? "max-sm:hidden" : ""}
-      `}
+            className={clsx(
+              "border-b py-5 border-gray-800",
+              index >= 2 && "max-sm:hidden"
+            )}
           >
             <p className="font-bold mb-0.5 font-mono">{post.title}</p>
             <p className="text-sm text-gray-300 font-mono">{formattedDate}</p>

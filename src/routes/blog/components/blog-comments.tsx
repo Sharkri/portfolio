@@ -1,13 +1,28 @@
 import { useState } from "react";
 import axios from "axios";
-import { Comment, Post } from "../../../types/Post";
+import { FormComment, Post } from "../../../types/Post";
 import BlogComment from "./blog-comment";
 import PostCommentForm from "./post-comment-form";
+import { addReplyById, removeCommentById } from "../../../lib/comment-helpers";
 
 const { VITE_API_URL } = import.meta.env;
 
 export default function BlogComments({ post }: { post: Post }) {
   const [comments, setComments] = useState(post.comments);
+
+  const postComment = async (data: FormComment) => {
+    try {
+      const res = await axios.post(
+        `${VITE_API_URL}/api/posts/${post._id}/comments`,
+        data
+      );
+
+      setComments((prev) => [res.data, ...prev]);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
+  };
 
   const deleteComment = async (commentId: string) => {
     try {
@@ -15,7 +30,21 @@ export default function BlogComments({ post }: { post: Post }) {
         `${VITE_API_URL}/api/posts/${post._id}/comments/${commentId}`
       );
 
-      setComments((prev) => prev.filter((c) => commentId !== c._id));
+      setComments((prev) => removeCommentById(prev, commentId));
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    }
+  };
+
+  const replyComment = async (commentId: string, data: FormComment) => {
+    try {
+      const res = await axios.post(
+        `${VITE_API_URL}/api/posts/${post._id}/comments/${commentId}/reply`,
+        data
+      );
+
+      setComments((prev) => addReplyById(prev, commentId, res.data));
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error(error);
@@ -30,12 +59,7 @@ export default function BlogComments({ post }: { post: Post }) {
       </h2>
 
       <div className="border-b mb-6 pb-4 border-zinc-600 border-dashed">
-        <PostCommentForm
-          postId={post._id}
-          onCommentAdd={(comment: Comment) =>
-            setComments((prev) => [comment, ...prev])
-          }
-        />
+        <PostCommentForm onSubmit={postComment} />
       </div>
 
       <div className="flex flex-col gap-8">
@@ -44,7 +68,8 @@ export default function BlogComments({ post }: { post: Post }) {
             <BlogComment
               key={comment._id}
               comment={comment}
-              onDelete={async () => deleteComment(comment._id)}
+              onDelete={deleteComment}
+              onReply={replyComment}
             />
           ))
         ) : (

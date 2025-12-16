@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import clsx from "clsx";
 import { useMemo, useRef, useState, useEffect, KeyboardEvent } from "react";
 
 export type ComboboxOption<T = string> = {
@@ -16,6 +17,7 @@ type ComboboxProps<T = string> = {
   disabled?: boolean;
   maxVisibleOptions?: number;
   className?: string;
+  size: "sm" | "md" | "lg";
 };
 
 export default function Combobox<T = string>({
@@ -28,6 +30,7 @@ export default function Combobox<T = string>({
   disabled = false,
   maxVisibleOptions,
   className = "",
+  size = "md",
 }: ComboboxProps<T>) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -116,8 +119,14 @@ export default function Combobox<T = string>({
   };
 
   return (
-    <div className={`flex flex-col space-y-1 relative ${className}`}>
-      <label className="text-sm font-medium text-muted" htmlFor={id}>
+    <div className={clsx("flex flex-col relative", className)}>
+      <label
+        className={clsx(
+          "text-sm font-medium text-muted mb-1",
+          size === "sm" && "sr-only"
+        )}
+        htmlFor={id}
+      >
         {label}
       </label>
 
@@ -169,7 +178,10 @@ export default function Combobox<T = string>({
         }
         onKeyDown={handleKeyDown}
         placeholder={placeholder}
-        className="rounded-lg bg-zinc-950/60 border-transparent focus:border-zinc-800 focus:ring-0 disabled:brightness-[0.8]"
+        className={clsx(
+          "rounded-lg bg-zinc-950/60 border-transparent focus:border-zinc-800 focus:ring-0 disabled:brightness-[0.8]",
+          size === "sm" && "text-sm"
+        )}
         disabled={disabled}
         autoComplete="off"
       />
@@ -187,11 +199,10 @@ export default function Combobox<T = string>({
                 }}
                 key={String(option.value)}
                 type="button"
-                className={`w-full text-left px-3 py-2 text-sm ${
-                  i === activeIndex
-                    ? "bg-zinc-800 text-white"
-                    : "hover:bg-zinc-800"
-                }`}
+                className={clsx(
+                  "w-full text-left px-3 py-2 text-sm hover:bg-zinc-800",
+                  i === activeIndex && "bg-zinc-800 text-white"
+                )}
                 onMouseEnter={() => setActiveIndex(i)}
                 onMouseDown={() => {
                   onChange(option.value);

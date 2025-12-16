@@ -1,81 +1,64 @@
 import { useState } from "react";
-import { Comment } from "../../../types/Post";
-import DeleteCommentButton from "./delete-comment-button";
-import useAccentColor from "../../../components/hooks/useAccentColor";
+import clsx from "clsx";
+import { Comment, FormComment } from "../../../types/Post";
+import PostCommentForm from "./post-comment-form";
+import { checkRepliesPopulated } from "../../../lib/comment-helpers";
+import BlogCommentCard from "./blog-comment-card";
+
+const MAX_INDENT = 4;
+const INDENT_PX = 16;
 
 export default function BlogComment({
   comment,
   onDelete,
+  onReply,
+  level = 0,
 }: {
   comment: Comment;
-  onDelete: () => Promise<void>;
+  onDelete: (commentId: string) => Promise<void>;
+  onReply: (commentId: string, data: FormComment) => Promise<void>;
+  level?: number;
 }) {
-  const formattedDate = new Date(comment.createdAt).toLocaleString(undefined, {
-    dateStyle: "medium",
-    timeStyle: "short",
-  });
+  const [replyOpen, setReplyOpen] = useState(false);
 
-  const [firstClick, setFirstClick] = useState(false);
-  const [deleting, setDeleting] = useState(false);
-
-  const accentColor = useAccentColor(comment.pokemonSpriteUrl);
-
-  const handleDeleteClick = async () => {
-    if (!firstClick) {
-      setFirstClick(true);
-      return;
-    }
-
-    setDeleting(true);
-    await onDelete();
-    setDeleting(false);
+  const handleReplySubmit = async (data: FormComment) => {
+    await onReply(comment._id, data);
+    setReplyOpen(false);
   };
+
+  const marginLeftPx = level > MAX_INDENT ? 0 : level * INDENT_PX;
 
   return (
     <div
-      className={`font-mono rounded-lg flex flex-col bg-zinc-900/60 border border-zinc-800 overflow-hidden ${
-        firstClick ? "animate-shudder" : ""
-      }`}
+      className="flex flex-col gap-4"
+      style={{ marginLeft: `${marginLeftPx}px` }}
     >
-      <div
-        className={`flex items-center justify-between px-4 py-2 text-sm border-b border-zinc-800/80 ${
-          firstClick ? "bg-[#3a1818]" : "bg-zinc-900/80"
-        } transition-colors`}
-      >
-        <div className="flex items-baseline gap-2">
-          <span
-            className="font-semibold transition-colors"
-            style={accentColor ? { color: accentColor } : undefined}
-          >
-            {comment.name}
-          </span>
-          <span className="text-xs text-muted">at {formattedDate}</span>
-        </div>
+      {/* Comment Card */}
+      <BlogCommentCard
+        comment={comment}
+        onToggleReply={() => setReplyOpen(!replyOpen)}
+        onDelete={onDelete}
+      />
 
-        {comment.canDelete && (
-          <DeleteCommentButton
-            firstClick={firstClick}
-            deleting={deleting}
-            onClick={handleDeleteClick}
-            onMouseLeave={() => setFirstClick(false)}
-          />
-        )}
+      {/* Replies */}
+      <div className={clsx(!replyOpen && "hidden")}>
+        <PostCommentForm onSubmit={handleReplySubmit} isReply />
       </div>
 
-      <div className="px-4 py-3 flex gap-4">
-        {comment.pokemonSpriteUrl && (
-          <img
-            src={comment.pokemonSpriteUrl}
-            alt={comment.pokemon}
-            className="sm:h-28 sm:w-28 object-contain brightness-90 hover:brightness-100"
-            loading="lazy"
-            title={comment.pokemon}
-          />
-        )}
-
-        <div className="flex-1 text-sm text-foreground/80 whitespace-pre-wrap mt-2.5">
-          {comment.text}
-        </div>
+      <div>
+        {checkRepliesPopulated(comment.replies) &&
+          // sort from oldest to newest
+          comment.replies
+            .toSorted((a, b) => +new Date(a.createdAt) - +new Date(b.createdAt))
+            .map((reply) => (
+              <BlogComment
+                comment={reply}
+                onDelete={onDelete}
+                onReply={onReply}
+                level={level + 1}
+                key={reply._id}
+              />
+            ))}
       </div>
     </div>
   );
