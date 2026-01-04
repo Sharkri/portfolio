@@ -5,16 +5,17 @@ import TechnologyItem from "./helper/TechnologyItem";
 const { BASE_URL } = import.meta.env;
 
 const technologies = [
-  { name: "JavaScript", logo: "assets/images/logos/javascript-logo.svg" },
-  { name: "Typescript", logo: "assets/images/logos/typescript-logo.svg" },
+  { name: "TypeScript", logo: "assets/images/logos/typescript-logo.svg" },
   { name: "React", logo: "assets/images/logos/react-logo.svg" },
-  { name: "NextJS", logo: "assets/images/logos/nextjs-logo.svg" },
-  { name: "TailwindCSS", logo: "assets/images/logos/tailwindcss-logo.svg" },
-  { name: "Git", logo: "assets/images/logos/git-logo.svg" },
-  { name: "Vite", logo: "assets/images/logos/vite-logo.svg" },
+  { name: "Next.js", logo: "assets/images/logos/nextjs-logo.svg" },
+  { name: "Tailwind CSS", logo: "assets/images/logos/tailwindcss-logo.svg" },
   { name: "Jest", logo: "assets/images/logos/jest-logo.svg" },
+  { name: "Prisma", logo: "assets/images/logos/prisma-logo.svg" },
+  { name: "PostgreSQL", logo: "assets/images/logos/postgresql-logo.svg" },
+  { name: "NodeJS", logo: "assets/images/logos/nodejs-logo.svg" },
 ];
-const startYears = differenceInYears(new Date(), new Date("1/12/2020"));
+
+const startYears = differenceInYears(new Date(), new Date("2020-01-12"));
 
 function About() {
   return (
@@ -30,9 +31,7 @@ function About() {
             alt="Leafeon"
             className="rounded-lg w-[250px]"
           />
-          <span className="text-xs text-muted font-mono">
-            my fav pokemon ^^
-          </span>
+          <span className="text-xs text-muted font-mono">my fav :3</span>
         </div>
         <div className="flex flex-col justify-between gap-8">
           <div className="max-w-[400px] lg:text-lg">
@@ -44,8 +43,8 @@ function About() {
             . I am a{" "}
             <span className="text-emerald-200">fullstack developer</span> and
             I&apos;ve been programming for about {startYears} years now. Outside
-            of coding, I like learning languages, drawing things, stoats, piano,
-            chess, knot theory,{" "}
+            of coding, I like learning languages, drawing, piano, markov chains,
+            knot theory,{" "}
             <a
               className="text-foreground/80 underline underline-offset-2 hover:text-foreground"
               href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
@@ -65,6 +64,10 @@ function About() {
                 key={technology.name}
               />
             ))}
+          </div>
+
+          <div className="ml-4 text-xs text-muted font-mono">
+            and also: Docker, Python, Rust, Git
           </div>
         </div>
       </div>

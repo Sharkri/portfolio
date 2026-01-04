@@ -45,7 +45,6 @@ function Hero() {
               </a>
             ))}
           </div>
-
           <div className="flex flex-col border border-gray-800/80 px-5 py-6 pb-0 rounded-sm mx-auto">
             <div className="pb-4 border-b border-gray-800 flex justify-between items-center gap-4 font-mono">
               <h1>latest blogs</h1>
