@@ -62,7 +62,11 @@ function Hero() {
         </div>
       </div>
 
-      <a href="#about" className="absolute bottom-8 animate-bounce">
+      <a
+        href="#about"
+        className="absolute bottom-8 animate-bounce"
+        aria-label="Scroll to About section"
+      >
         <i className="fa-solid fa-arrow-down text-3xl" />
       </a>
     </div>

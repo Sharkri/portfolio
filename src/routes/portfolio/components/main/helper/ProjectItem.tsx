@@ -30,7 +30,7 @@ function ProjectItem({ project }: { project: Project }) {
 
         <div className="flex-[60%] flex flex-col gap-6">
           <div>
-            <h1 className="text-lg font-bold mb-2.5">{project.title}</h1>
+            <h2 className="text-lg font-bold mb-2.5">{project.title}</h2>
 
             <p className="text-muted whitespace-pre-wrap mb-2.5">
               {project.description}
