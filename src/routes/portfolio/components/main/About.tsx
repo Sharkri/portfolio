@@ -37,14 +37,13 @@ function About() {
           <div className="max-w-[400px] lg:text-lg">
             hi! i&apos;m{" "}
             <ruby>
-              <span className="text-emerald-200">shark</span>
+              <span className="text-accent">shark</span>
               <rt className="text-xs text-muted">シャーク</rt>
             </ruby>
-            . I am a{" "}
-            <span className="text-emerald-200">fullstack developer</span> and
-            I&apos;ve been programming for about {startYears} years now. Outside
-            of coding, I like learning languages, drawing, piano, markov chains,
-            knot theory,{" "}
+            . I am a <span className="text-accent">fullstack developer</span>{" "}
+            and I&apos;ve been programming for about {startYears} years now.
+            Outside of coding, I like learning languages, drawing, piano, markov
+            chains, knot theory,{" "}
             <a
               className="text-foreground/80 underline underline-offset-2 hover:text-foreground"
               href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
