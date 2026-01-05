@@ -49,12 +49,12 @@ export default function LatestPosts() {
             to={`/blog/${post._id}`}
             key={post._id}
             className={clsx(
-              "border-b py-5 border-gray-800",
+              "border-b p-5 border-gray-800 hover:bg-emerald-200/5 transition",
               index >= 2 && "max-sm:hidden"
             )}
           >
             <p className="font-bold mb-0.5 font-mono">{post.title}</p>
-            <p className="text-sm text-gray-300 font-mono">{formattedDate}</p>
+            <p className="text-sm text-muted font-mono">{formattedDate}</p>
           </Link>
         );
       })}
