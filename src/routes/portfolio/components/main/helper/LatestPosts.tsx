@@ -27,14 +27,14 @@ export default function LatestPosts() {
 
   if (!posts) {
     return (
-      <div className="flex items-center gap-4 py-5">
-        Loading blogs... <Spinner />
+      <div className="flex items-center gap-4 p-5 font-mono text-muted">
+        loading blogs... <Spinner />
       </div>
     );
   }
 
   if (posts.length === 0) {
-    return <div className="py-5 text-muted font-mono">no blogs yet...</div>;
+    return <div className="p-5 text-muted font-mono">no blogs yet...</div>;
   }
 
   const latestPosts = posts.slice(0, 3);
