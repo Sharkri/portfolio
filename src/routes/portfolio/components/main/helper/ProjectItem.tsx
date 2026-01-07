@@ -19,7 +19,7 @@ function ProjectItem({ project }: { project: Project }) {
   return (
     <div className="flex flex-col gap-8 border-b border-b-white/50 last:border-b-0 last:pb-0 mb-7 pb-8">
       <div className="flex max-lg:flex-col gap-6">
-        <div className="flex-[40%] overflow-hidden">
+        <div className="flex-[35%] overflow-hidden">
           <img
             src={project.image}
             className="brightness-90 hover:brightness-100 hover:scale-105 transition duration-300"
@@ -28,7 +28,7 @@ function ProjectItem({ project }: { project: Project }) {
           />
         </div>
 
-        <div className="flex-[60%] flex flex-col gap-6">
+        <div className="flex-[65%] flex flex-col gap-6">
           <div>
             <h2 className="text-lg font-bold mb-2.5">{project.title}</h2>
 
