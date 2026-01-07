@@ -1,4 +1,3 @@
-import { differenceInYears } from "date-fns";
 import Section from "./helper/Section";
 import TechnologyItem from "./helper/TechnologyItem";
 
@@ -14,8 +13,6 @@ const technologies = [
   { name: "PostgreSQL", logo: "assets/images/logos/postgresql-logo.svg" },
   { name: "NodeJS", logo: "assets/images/logos/nodejs-logo.svg" },
 ];
-
-const startYears = differenceInYears(new Date(), new Date("2020-01-12"));
 
 function About() {
   return (
@@ -34,25 +31,29 @@ function About() {
           <span className="text-xs text-muted font-mono">my fav :3</span>
         </div>
         <div className="flex flex-col justify-between gap-8">
-          <div className="max-w-[400px] lg:text-lg">
-            hi! i&apos;m{" "}
-            <ruby>
-              <span className="text-accent">shark</span>
-              <rt className="text-xs text-muted">シャーク</rt>
-            </ruby>
-            . I am a <span className="text-accent">fullstack developer</span>{" "}
-            and I&apos;ve been programming for about {startYears} years now.
-            Outside of coding, I like learning languages, drawing, piano, markov
-            chains, knot theory,{" "}
-            <a
-              className="text-foreground/80 underline underline-offset-2 hover:text-foreground"
-              href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
-              target="_blank"
-              rel="noreferrer"
-            >
-              spsa
-            </a>
-            , tetr.io, pokemon mystery dungeon, and other stuff!
+          <div className="max-w-[400px] lg:text-lg space-y-4">
+            <div>
+              hi! i&apos;m{" "}
+              <ruby>
+                <span className="text-accent">shark</span>
+                <rt className="text-xs text-muted">シャーク</rt>
+              </ruby>
+              , a <span className="text-accent">fullstack developer</span>{" "}
+              currently focused on building clean and accessible web apps.
+            </div>
+            <div>
+              I also like learning languages, drawing, piano, markov chains,
+              knot theory,{" "}
+              <a
+                className="text-foreground/80 underline underline-offset-2 hover:text-foreground"
+                href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
+                target="_blank"
+                rel="noreferrer"
+              >
+                spsa
+              </a>
+              , tetr.io, pokemon mystery dungeon, and other stuff!
+            </div>
           </div>
 
           <div className="grid grid-cols-[repeat(4,65px)] gap-y-4">
