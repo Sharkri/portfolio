@@ -61,6 +61,6 @@ body,
 @layer base {
   html {
     @apply bg-primary;
-    @apply text-gray-50;
+    @apply text-neutral-100;
   }
 }
