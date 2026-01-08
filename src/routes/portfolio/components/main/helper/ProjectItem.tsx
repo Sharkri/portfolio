@@ -1,25 +1,22 @@
 /* eslint-disable no-console */
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { StarIcon } from "@heroicons/react/24/solid";
 import Project from "../../../../../types/Project";
 
 function ProjectItem({ project }: { project: Project }) {
   const [stars, setStars] = useState(0);
 
   useEffect(() => {
-    const getRepoInfo = () =>
-      axios.get(`https://api.github.com/repos/${project.githubRepo}`);
-
-    getRepoInfo()
+    axios
+      .get(`https://api.github.com/repos/${project.githubRepo}`)
       .then((res) => setStars(res.data.stargazers_count))
       .catch(console.error);
   }, [project.githubRepo]);
 
   return (
-    <div className="flex flex-col gap-8 border-b border-b-white/50 last:border-b-0 last:pb-0 mb-7 pb-8">
+    <div className="flex flex-col border-b border-b-white/50 border-dashed last:border-b-0 mb-7 pb-8">
       <div className="flex max-lg:flex-col gap-6">
-        <div className="flex-[35%] overflow-hidden">
+        <div className="flex-[40%] overflow-hidden">
           <img
             src={project.image}
             className="brightness-90 hover:brightness-100 hover:scale-105 transition duration-300"
@@ -28,15 +25,30 @@ function ProjectItem({ project }: { project: Project }) {
           />
         </div>
 
-        <div className="flex-[65%] flex flex-col gap-6">
+        <div className="flex-[60%] flex flex-col">
           <div>
-            <h2 className="text-lg font-bold mb-2.5">{project.title}</h2>
+            <div className="flex gap-2 items-center">
+              <h2 className="text-lg font-bold">{project.title}</h2>
+              {stars > 0 && (
+                <>
+                  <div className="text-muted">—</div>
+                  <div
+                    className="flex items-center gap-1.5"
+                    title={`${stars} Stargazers on GitHub`}
+                  >
+                    <i className="fa-solid fa-star text-yellow-500 text-sm" />
+                    <span className="font-semibold">{stars}</span>
+                    <span className="sr-only">stars</span>
+                  </div>
+                </>
+              )}
+            </div>
 
-            <p className="text-muted whitespace-pre-wrap mb-2.5">
+            <p className="text-white/70 whitespace-pre-wrap">
               {project.description}
             </p>
 
-            <div className="text-muted text-sm flex flex-wrap gap-2.5">
+            <div className="text-white/60 text-[13px] flex flex-wrap gap-2 mt-2 mb-6">
               {project.technologies.map((technology) => (
                 <span
                   key={technology}
@@ -47,20 +59,21 @@ function ProjectItem({ project }: { project: Project }) {
               ))}
             </div>
 
-            {stars > 0 && (
-              <div
-                className="flex items-center gap-1 mt-2.5"
-                title={`${stars} Stargazers`}
-              >
-                <StarIcon className="w-5 h-5 text-[#daaa3f]" />
-                <p className="text-white/90">
-                  <span className="font-bold">{stars}</span>
+            {project.learnings.length ? (
+              <div>
+                <p className="text-xs uppercase tracking-wide text-white/60 mb-2">
+                  Challenges & Learnings
                 </p>
+                <ul className="text-sm text-muted space-y-1">
+                  {project.learnings.map((item) => (
+                    <li key={item}>• {item}</li>
+                  ))}
+                </ul>
               </div>
-            )}
+            ) : null}
           </div>
 
-          <div className="flex gap-6 font-bold">
+          <div className="mt-6 flex gap-6 font-bold">
             <a
               href={project.livePreview}
               target="_blank"

@@ -3,6 +3,7 @@ export default interface Project {
   image: string;
   description: string;
   technologies: string[];
+  learnings: string[];
   livePreview: string;
   githubRepo: string;
 }
