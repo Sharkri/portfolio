@@ -27,7 +27,7 @@ function ProjectItem({ project }: { project: Project }) {
 
         <div className="flex-[60%] flex flex-col">
           <div>
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-2 items-center mb-1.5">
               <h2 className="text-lg font-bold">{project.title}</h2>
               {stars > 0 && (
                 <>
@@ -44,11 +44,11 @@ function ProjectItem({ project }: { project: Project }) {
               )}
             </div>
 
-            <p className="text-white/70 whitespace-pre-wrap">
+            <p className="text-white/70 whitespace-pre-wrap max-sm:text-sm">
               {project.description}
             </p>
 
-            <div className="text-white/60 text-[13px] flex flex-wrap gap-2 mt-2 mb-6">
+            <div className="text-white/60 text-[13px] max-sm:text-xs flex flex-wrap gap-2 mt-3 mb-6">
               {project.technologies.map((technology) => (
                 <span
                   key={technology}
