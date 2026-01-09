@@ -43,7 +43,7 @@ export default function BlogPost() {
         <title>{post.title}</title>
       </Helmet>
 
-      <div className="max-w-[1108px] mt-20 py-12 px-2 sm:px-8 mx-auto">
+      <div className="max-w-[1108px] py-12 px-2 sm:px-8 mx-auto">
         <Link
           to="/blog"
           className="underline font-bold ml-4 mb-2 text-muted hover:text-foreground transition-colors duration-200"
