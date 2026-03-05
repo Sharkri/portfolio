@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("/assets/fonts/Inter-VariableFont_opsz,wght.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -12,7 +12,7 @@
 
 @font-face {
   font-family: "Cousagi";
-  src: url("/assets/fonts/Cousagi-Font.ttf") format("truetype");
+  src: url("/assets/fonts/Cousagi-Font.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -20,8 +20,8 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("/assets/fonts/Inter-Italic-VariableFont_opsz,wght.ttf")
-    format("truetype");
+  src: url("/assets/fonts/Inter-Italic-VariableFont_opsz,wght.woff2")
+    format("woff2");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -29,8 +29,8 @@
 
 @font-face {
   font-family: "Source Code Pro";
-  src: url("/assets/fonts/SourceCodePro-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/assets/fonts/SourceCodePro-VariableFont_wght.woff2")
+    format("woff2");
   font-weight: 200 900;
   font-style: normal;
   font-display: swap;
@@ -38,8 +38,8 @@
 
 @font-face {
   font-family: "Source Code Pro";
-  src: url("/assets/fonts/SourceCodePro-Italic-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/assets/fonts/SourceCodePro-Italic-VariableFont_wght.woff2")
+    format("woff2");
   font-weight: 200 900;
   font-style: italic;
   font-display: swap;
