@@ -23,11 +23,12 @@ function About() {
     >
       <div className="flex flex-wrap gap-16 max-md:gap-8 justify-center">
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">
-          <img
-            src="https://forums.pokemmo.com/uploads/monthly_2025_12/385.gif.bec545039220a61d169d25e3fa65ee32.gif"
-            alt="Leafeon"
-            className="rounded-lg w-[250px]"
-          />
+          <video autoPlay loop muted playsInline>
+            <source
+              src="/portfolio/assets/images/jirachi.webm"
+              type="video/webm"
+            />
+          </video>
           <span className="text-xs text-muted">make a wish!</span>
         </div>
         <div className="flex flex-col justify-between gap-8">
