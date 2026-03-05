@@ -59,7 +59,7 @@ export default function BlogPosts() {
           >
             show all posts as opposed to just those tagged with{" "}
             <span
-              className="bg-zinc-800 rounded-full py-1 px-2.5 text-sm font-mono lowercase"
+              className="bg-zinc-800 rounded-full py-1 px-2.5 text-sm lowercase"
               style={{ color: getColorFromString(topic) }}
             >
               {topic}

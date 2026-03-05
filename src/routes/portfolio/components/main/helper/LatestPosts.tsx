@@ -27,14 +27,14 @@ export default function LatestPosts() {
 
   if (!posts) {
     return (
-      <div className="flex items-center gap-4 p-5 font-mono text-muted">
+      <div className="flex items-center gap-4 p-5 text-muted">
         loading blogs... <Spinner />
       </div>
     );
   }
 
   if (posts.length === 0) {
-    return <div className="p-5 text-muted font-mono">no blogs yet...</div>;
+    return <div className="p-5 text-muted">no blogs yet...</div>;
   }
 
   const latestPosts = posts.slice(0, 3);
@@ -53,8 +53,8 @@ export default function LatestPosts() {
               index >= 2 && "max-sm:hidden"
             )}
           >
-            <p className="font-bold mb-0.5 font-mono">{post.title}</p>
-            <p className="text-sm text-muted font-mono">{formattedDate}</p>
+            <p className="font-bold mb-0.5">{post.title}</p>
+            <p className="text-sm text-muted">{formattedDate}</p>
           </Link>
         );
       })}
