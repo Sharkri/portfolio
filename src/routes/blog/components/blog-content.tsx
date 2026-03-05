@@ -11,7 +11,7 @@ export default function BlogContent({
   return (
     <div
       className={clsx(
-        "max-w-none prose prose-invert prose-accent bg-[#0D0D0D] p-8",
+        "max-w-none font-sans prose prose-invert prose-accent bg-[#0D0D0D] p-8",
         className
       )}
       // eslint-disable-next-line react/no-danger

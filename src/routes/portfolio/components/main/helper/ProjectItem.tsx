@@ -27,20 +27,17 @@ function ProjectItem({ project }: { project: Project }) {
 
         <div className="flex-[60%] flex flex-col">
           <div>
-            <div className="flex gap-2 items-center mb-1.5">
+            <div className="flex gap-4 items-center mb-1.5">
               <h2 className="text-lg font-bold">{project.title}</h2>
               {stars > 0 && (
-                <>
-                  <div className="text-muted">—</div>
-                  <div
-                    className="flex items-center gap-1.5"
-                    title={`${stars} Stargazers on GitHub`}
-                  >
-                    <i className="fa-solid fa-star text-yellow-500 text-sm" />
-                    <span className="font-semibold">{stars}</span>
-                    <span className="sr-only">stars</span>
-                  </div>
-                </>
+                <div
+                  className="flex items-center gap-1.5"
+                  title={`${stars} Stargazers on GitHub`}
+                >
+                  <i className="fa-solid fa-star text-accent text-sm" />
+                  <span className="font-semibold">{stars}</span>
+                  <span className="sr-only">stars</span>
+                </div>
               )}
             </div>
 
@@ -61,12 +58,14 @@ function ProjectItem({ project }: { project: Project }) {
 
             {project.learnings.length ? (
               <div>
-                <p className="text-xs uppercase tracking-wide text-white/60 mb-2">
-                  Challenges & Learnings
+                <p className="tracking-wide text-white/60 mb-2">
+                  challenges & learnings
                 </p>
                 <ul className="text-sm text-muted space-y-1">
                   {project.learnings.map((item) => (
-                    <li key={item}>• {item}</li>
+                    <li key={item}>
+                      <span className="font-sans">•</span> {item}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -81,7 +80,7 @@ function ProjectItem({ project }: { project: Project }) {
               className="flex items-center gap-3 group"
             >
               <span>
-                LIVE PREVIEW
+                live preview
                 <div className="h-0.5 bg-white/75 origin-left translate-y-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </span>
               <i
@@ -97,7 +96,7 @@ function ProjectItem({ project }: { project: Project }) {
               className="flex items-center gap-3 group"
             >
               <span>
-                VIEW CODE
+                view code
                 <div className="h-0.5 bg-white/75 origin-left translate-y-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
               </span>
               <i

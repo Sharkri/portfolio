@@ -37,9 +37,9 @@ const projects: Project[] = [
   },
 
   {
-    title: "PokéMemo",
+    title: "PokeMemo",
     description:
-      "A retro Pokémon-themed memory game featuring over 1,000 Pokémon via PokeAPI, including levels, sfx, and bgm. If you're lucky, you might find a shiny too!",
+      "A retro Pokemon-themed memory game featuring over 1,000 Pokemon via PokeAPI, including levels, sfx, and bgm. If you're lucky, you might find a shiny too!",
     githubRepo: "Sharkri/pokememo",
     livePreview: "https://sharkri.github.io/pokememo",
     image: pokeMemoImg,

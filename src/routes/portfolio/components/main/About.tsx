@@ -24,11 +24,11 @@ function About() {
       <div className="flex flex-wrap gap-16 max-md:gap-8 justify-center">
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">
           <img
-            src="/portfolio/assets/images/leafeon.png"
+            src="https://forums.pokemmo.com/uploads/monthly_2025_12/385.gif.bec545039220a61d169d25e3fa65ee32.gif"
             alt="Leafeon"
             className="rounded-lg w-[250px]"
           />
-          <span className="text-xs text-muted font-mono">my fav :3</span>
+          <span className="text-xs text-muted">make a wish!</span>
         </div>
         <div className="flex flex-col justify-between gap-8">
           <div className="max-w-[400px] lg:text-lg space-y-4">
@@ -39,20 +39,11 @@ function About() {
                 <rt className="text-xs text-muted">シャーク</rt>
               </ruby>
               , a <span className="text-accent">fullstack developer</span>{" "}
-              currently focused on building clean and accessible web apps.
+              currently focused on creating clean and accessible web apps.
             </div>
             <div>
-              I also like learning languages, drawing, piano, markov chains,
-              knot theory,{" "}
-              <a
-                className="text-foreground/80 underline underline-offset-2 hover:text-foreground"
-                href="https://en.wikipedia.org/wiki/Simultaneous_perturbation_stochastic_approximation"
-                target="_blank"
-                rel="noreferrer"
-              >
-                spsa
-              </a>
-              , tetr.io, pokemon mystery dungeon, and other stuff!
+              I also like learning languages, drawing, piano, tetr.io, pokemon
+              mystery dungeon, and other stuff!
             </div>
           </div>
 

@@ -74,7 +74,7 @@ export default function PostCommentForm({
         e.preventDefault();
         handleSubmit();
       }}
-      className="flex flex-col gap-2"
+      className="flex flex-col gap-2 font-mono"
     >
       <div className="flex flex-col gap-1">
         <label className="sr-only" htmlFor="comment">

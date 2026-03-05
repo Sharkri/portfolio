@@ -14,6 +14,7 @@ export default {
 
     extend: {
       fontFamily: {
+        cute: ["Cousagi"],
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["'Source Code Pro'", "monospace"],
       },
@@ -41,7 +42,7 @@ export default {
         primary: "#17171f", // almost black
         muted: "oklch(70.5% 0.015 286.067)", // zinc-400
         foreground: "#f9fafb", // gray-50
-        accent: "oklch(90.5% 0.093 164.15)", // emerald-200
+        accent: "oklch(94.5% 0.129 101.54)", // yellow-200
       },
     },
   },

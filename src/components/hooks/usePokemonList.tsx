@@ -21,7 +21,7 @@ export default function usePokemonList() {
       } catch (err) {
         if (!cancelled) {
           // eslint-disable-next-line no-console
-          console.error("Failed to load Pokémon", err);
+          console.error("Failed to load Pokemon", err);
           setError(err);
         }
       } finally {

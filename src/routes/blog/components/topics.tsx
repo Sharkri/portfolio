@@ -7,7 +7,7 @@ export default function Topics({ topics }: { topics: Post["topics"] }) {
     <div className="flex flex-wrap gap-2.5 items-end">
       {topics?.map((topic) => (
         <Link
-          className="bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors py-1 px-2.5 text-sm font-mono lowercase"
+          className="bg-zinc-800 rounded-full hover:bg-zinc-700 transition-colors py-1 px-2.5 text-sm lowercase"
           key={topic}
           to={`/blog?t=${topic}`}
           style={{ color: getColorFromString(topic) }}

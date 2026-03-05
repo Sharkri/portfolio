@@ -55,9 +55,9 @@ export default function BlogPost() {
           <header className="flex flex-wrap justify-between gap-4 px-6 pb-4">
             <div>
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
-              <p className="text-gray-400 text-sm">
+              <p className="text-gray-400">
                 by <b className="text-accent">{post.author.displayName}</b> at{" "}
-                <span title={createdAt.toUTCString()}>
+                <span title={createdAt.toUTCString()} className="text-sm">
                   {createdAt.toLocaleDateString()}
                 </span>
               </p>

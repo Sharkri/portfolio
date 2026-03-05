@@ -38,13 +38,13 @@ export default function BlogCommentCard({
   return (
     <div
       className={clsx(
-        "font-mono rounded-lg flex flex-col bg-zinc-900/60 border border-zinc-800 overflow-hidden",
+        "rounded-lg flex flex-col bg-zinc-900/60 border border-zinc-800 overflow-hidden",
         firstClick && "animate-shudder"
       )}
     >
       <div
         className={clsx(
-          "flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-sm border-b border-zinc-800/80 transition-colors",
+          "flex flex-wrap items-center justify-between gap-2 px-4 py-2  border-b border-zinc-800/80 transition-colors",
           firstClick ? "bg-[#3a1818]" : "bg-zinc-900/80"
         )}
       >
@@ -55,7 +55,7 @@ export default function BlogCommentCard({
           >
             {comment.name}
           </span>
-          <span className="text-xs text-muted">at {formattedDate}</span>
+          <span className="text-sm text-muted">at {formattedDate}</span>
         </div>
 
         {comment.canDelete && (
@@ -80,7 +80,7 @@ export default function BlogCommentCard({
         )}
 
         <div className="flex flex-col gap-2 grow">
-          <div className="flex-1 text-sm text-foreground/80 whitespace-pre-wrap mt-2.5">
+          <div className="flex-1 text-foreground/80 whitespace-pre-wrap mt-2.5 font-mono text-sm">
             {comment.text}
           </div>
 

@@ -6,15 +6,13 @@ export default function BlogHeader() {
       <nav className="grow flex justify-between items-center gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300">
         <Link
           to="/"
-          className="flex items-center gap-2"
+          className="flex items-center gap-2 text-xl"
           title="shark / homepage"
         >
           シャーク
         </Link>
 
-        <Link to="/blog" className="font-mono">
-          blog
-        </Link>
+        <Link to="/blog">blog</Link>
       </nav>
     </header>
   );
