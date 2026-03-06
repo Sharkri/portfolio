@@ -23,12 +23,7 @@ function About() {
     >
       <div className="flex flex-wrap gap-16 max-md:gap-8 justify-center">
         <div className="space-y-6 max-w-[275px] max-lg:max-w-[225px] max-sm:max-w-[200px]">
-          <video autoPlay loop muted playsInline>
-            <source
-              src="/portfolio/assets/images/jirachi.webm"
-              type="video/webm"
-            />
-          </video>
+          <img src="/portfolio/assets/images/jirachi.webp" alt="Jirachi" />
           <span className="text-xs text-muted">make a wish!</span>
         </div>
         <div className="flex flex-col justify-between gap-8">

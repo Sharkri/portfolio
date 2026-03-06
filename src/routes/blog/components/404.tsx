@@ -8,12 +8,7 @@ export default function NotFound() {
 
       <div className="p-10 flex flex-col gap-6 justify-center items-center">
         <h1 className="text-8xl font-bold">404</h1>
-        <video className="rounded-sm" autoPlay loop muted playsInline>
-          <source
-            src="/portfolio/assets/images/sadcat.webm"
-            type="video/webm"
-          />
-        </video>
+        <img src="/portfolio/assets/images/sadcat.webp" alt="" />
 
         <p className="text-xl text-muted">
           This page doesn&apos;t exist.{" "}
