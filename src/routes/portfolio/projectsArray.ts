@@ -1,10 +1,10 @@
 import Project from "../../types/Project";
 
-import waldoImg from "./project-screenshots/where-is-waldo.png?w=668&format=webp&imagetools";
-import todoImg from "./project-screenshots/shopping-cart.png?w=668&format=webp&imagetools";
-import mediumImg from "./project-screenshots/medium-clone.png?w=668&format=webp&imagetools";
-import cvAppImg from "./project-screenshots/cv-application.png?w=668&format=webp&imagetools";
-import pokeMemoImg from "./project-screenshots/pokememo.png?w=668&format=webp&imagetools";
+import waldoImg from "./project-screenshots/where-is-waldo.png?w=567&format=webp&imagetools";
+import todoImg from "./project-screenshots/shopping-cart.png?w=567&format=webp&imagetools";
+import mediumImg from "./project-screenshots/medium-clone.png?w=567&format=webp&imagetools";
+import cvAppImg from "./project-screenshots/cv-application.png?w=567&format=webp&imagetools";
+import pokeMemoImg from "./project-screenshots/pokememo.png?w=567&format=webp&imagetools";
 
 const projects: Project[] = [
   {
