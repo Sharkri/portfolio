@@ -40,7 +40,7 @@ export default {
 
       colors: {
         primary: "#17171f", // almost black
-        muted: "oklch(70.5% 0.015 286.067)", // zinc-400
+        muted: "rgba(255, 255, 255, 0.6)",
         foreground: "#f9fafb", // gray-50
         accent: "oklch(94.5% 0.129 101.54)", // yellow-200
       },
