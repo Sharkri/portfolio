@@ -40,7 +40,7 @@ export default function LatestPosts() {
     return (
       // to prevent layout shift: 91px * 3 = 273px or 91px * 2 = 182px
       <div className="p-5 text-muted h-[273px] max-sm:h-[182px] flex items-center flex-col text-lg">
-        <p className="text-center">no blogs yet... have a mew instead:</p>
+        <p className="text-center">no blogs yet... have a mew instead!</p>
         <img src="/portfolio/assets/animated/mew.gif" className="h-28" alt="" />
       </div>
     );

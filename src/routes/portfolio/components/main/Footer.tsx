@@ -3,6 +3,14 @@ function Footer() {
     <footer className="pb-8 pt-6 border-slate-700 border-t">
       <div className="flex flex-col items-center">
         <div className="flex flex-col gap-4">
+          <div className="mx-auto">
+            <img
+              src="/portfolio/assets/animated/tiny-jirachi.gif"
+              width={64}
+              height={64}
+              alt=""
+            />
+          </div>
           <div className="flex justify-center gap-4 text-muted">
             <a
               href="https://github.com/sharkri/portfolio"
@@ -20,7 +28,6 @@ function Footer() {
               contact me
             </a>
           </div>
-
           <div className="text-muted max-w-sm text-center">
             coded by me using <span className="font-bold">vite + react</span>{" "}
             and deployed via github pages.
