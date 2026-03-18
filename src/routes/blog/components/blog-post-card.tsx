@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import { Post } from "../../../types/Post";
-import Topics from "./topics";
+import BlogTopics from "./blog-topics";
 import BlogContent from "./blog-content";
+import PostDate from "./post-date";
 
 export default function BlogPostCard({ post }: { post: Post }) {
-  const createdAt = new Date(post.createdAt);
-
   return (
     <div className="flex flex-col pt-5 bg-zinc-900 rounded-lg brightness">
       <div className="flex flex-wrap justify-between gap-4 px-6 pb-4">
@@ -16,13 +15,11 @@ export default function BlogPostCard({ post }: { post: Post }) {
 
           <p className="text-gray-400">
             by <b className="text-accent">{post.author.displayName}</b> at{" "}
-            <span title={createdAt.toUTCString()} className="text-sm">
-              {createdAt.toLocaleDateString()}
-            </span>
+            <PostDate date={post.createdAt} />
           </p>
         </div>
 
-        <Topics topics={post.topics} />
+        <BlogTopics topics={post.topics} />
       </div>
 
       <BlogContent

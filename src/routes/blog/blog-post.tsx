@@ -5,9 +5,10 @@ import { Helmet } from "react-helmet-async";
 import { Post } from "../../types/Post";
 import NotFound from "./components/404";
 import BlogHeader from "./components/blog-header";
-import Topics from "./components/topics";
+import BlogTopics from "./components/blog-topics";
 import BlogComments from "./components/blog-comments";
 import BlogContent from "./components/blog-content";
+import PostDate from "./components/post-date";
 
 const { VITE_API_URL } = import.meta.env;
 
@@ -34,8 +35,6 @@ export default function BlogPost() {
   if (loading) return null;
   if (!post) return <NotFound />;
 
-  const createdAt = new Date(post.createdAt);
-
   return (
     <div className="w-full h-full">
       <BlogHeader />
@@ -57,13 +56,11 @@ export default function BlogPost() {
               <h1 className="text-3xl mb-1 font-bold">{post.title}</h1>
               <p className="text-gray-400">
                 by <b className="text-accent">{post.author.displayName}</b> at{" "}
-                <span title={createdAt.toUTCString()} className="text-sm">
-                  {createdAt.toLocaleDateString()}
-                </span>
+                <PostDate date={post.createdAt} />
               </p>
             </div>
 
-            <Topics topics={post.topics} />
+            <BlogTopics topics={post.topics} />
           </header>
 
           <main>

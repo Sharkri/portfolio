@@ -52,7 +52,7 @@ export default function LatestPosts() {
     <>
       {latestPosts.map((post, index) => {
         const postDate = new Date(post.createdAt);
-        const formattedDate = format(postDate, "MMM d, yyyy");
+        const formattedDate = format(postDate, "yyyy年 MM月 d日");
 
         return (
           <Link
@@ -66,7 +66,9 @@ export default function LatestPosts() {
             <p className="font-bold mb-0.5 text-lg line-clamp-1">
               {post.title}
             </p>
-            <p className="text-sm text-muted">{formattedDate}</p>
+            <p className="text-sm text-muted" title={postDate.toLocaleString()}>
+              {formattedDate}
+            </p>
           </Link>
         );
       })}

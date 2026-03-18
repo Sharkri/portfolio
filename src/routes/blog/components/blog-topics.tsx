@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Post } from "../../../types/Post";
 import getColorFromString from "../../../lib/color-from-string";
 
-export default function Topics({ topics }: { topics: Post["topics"] }) {
+export default function BlogTopics({ topics }: { topics: Post["topics"] }) {
   return (
     <div className="flex flex-wrap gap-2.5 items-end">
       {topics?.map((topic) => (
