@@ -51,7 +51,7 @@ function Hero() {
           <div className="flex flex-col border border-gray-800/80 py-6 pb-0 rounded-sm mx-auto">
             <div className="px-5 pb-4 border-b border-gray-800 flex justify-between items-center gap-4">
               <h1 className="text-lg">latest blogs</h1>
-              <div className="stars-divider grow h-5 max-md:h-3" />
+              <div className="stars-divider grow h-3.5 max-md:h-3 brightness-[0.85]" />
               <Link
                 to="/blog"
                 className="hover:underline underline-offset-2 text-neutral-300 hover:text-accent transition"

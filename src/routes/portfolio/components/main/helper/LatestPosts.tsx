@@ -52,7 +52,7 @@ export default function LatestPosts() {
     <>
       {latestPosts.map((post, index) => {
         const postDate = new Date(post.createdAt);
-        const formattedDate = format(postDate, "yyyy年 MM月 d日");
+        const formattedDate = format(postDate, "MMM d, yyyy");
 
         return (
           <Link
