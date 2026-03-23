@@ -75,10 +75,3 @@ body,
     @apply text-neutral-100;
   }
 }
-
-.stars-divider {
-  background-image: url("/assets/animated/bluestarribbon.gif");
-  background-repeat: repeat;
-  background-size: contain;
-  background-position: center;
-}

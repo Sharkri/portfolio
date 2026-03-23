@@ -27,7 +27,7 @@ function Heading({ children, id }: { children: ReactNode; id?: string }) {
       >
         {children}
       </motion.h1>
-      <div className="border-b border-b-white/50 my-5 sm:my-7" />
+      <div className="border-b border-slate-500 my-5 sm:my-7" />
     </>
   );
 }

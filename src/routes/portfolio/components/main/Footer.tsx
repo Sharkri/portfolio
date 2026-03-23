@@ -27,7 +27,7 @@ function Footer() {
 
           <div className="flex flex-col items-center pt-10 max-sm:pt-6">
             <img
-              src="/portfolio/assets/animated/tiny-jirachi.gif"
+              src="/portfolio/assets/images/dolljirachi1.png"
               width={64}
               height={64}
               alt=""
