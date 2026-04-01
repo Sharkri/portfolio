@@ -16,14 +16,14 @@ function Header() {
         <div>
           <a
             href="#top"
-            className="flex items-center gap-2 hover:text-gray-200 hover:text-shadow-lg transition-colors duration-300 text-xl"
-            title="shark / homepage"
+            className="flex items-center gap-2 hover:text-accent hover:text-shadow-lg transition-colors duration-300 text-xl"
+            aria-label="Homepage"
           >
             シャーク
           </a>
         </div>
 
-        <div className="flex items-center gap-4 child-hover:text-gray-200 child-hover:text-shadow-lg child:transition-colors child:duration-300 text-lg">
+        <div className="flex items-center gap-4 child-hover:text-shadow-lg child-hover:text-accent child:transition-colors child:duration-300 text-lg">
           <a href="#about">about</a>
           <a href="#projects">projects</a>
           <Link to="/blog">blog</Link>

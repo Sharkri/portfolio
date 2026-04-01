@@ -8,14 +8,14 @@ function Footer() {
               href="https://github.com/sharkri/portfolio"
               target="_blank"
               rel="noreferrer"
-              className="underline underline-offset-2 hover:text-foreground"
+              className="underline underline-offset-2 hover:text-accent hover:text-shadow-lg transition"
             >
               source code
             </a>
             ---
             <a
               href="mailto:snowyshark@proton.me"
-              className="underline underline-offset-2 hover:text-foreground"
+              className="underline underline-offset-2 hover:text-accent hover:text-shadow-lg transition"
             >
               contact me
             </a>

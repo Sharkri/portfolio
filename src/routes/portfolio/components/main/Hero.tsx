@@ -22,7 +22,7 @@ function Hero() {
       id="hero"
     >
       <div>
-        <h1 className="text-7xl max-md:text-6xl font-bold text-center mb-8">
+        <h1 className="text-7xl max-md:text-6xl text-center mb-8">
           hi, i&apos;m <span className="text-accent">shark</span>.
         </h1>
 
@@ -53,7 +53,7 @@ function Hero() {
               <h1 className="text-lg">latest blogs</h1>
               <Link
                 to="/blog"
-                className="hover:underline underline-offset-2 text-neutral-300 hover:text-accent transition"
+                className="hover:underline underline-offset-2 text-neutral-300 hover:text-accent hover:text-shadow-lg transition"
               >
                 view all
               </Link>
