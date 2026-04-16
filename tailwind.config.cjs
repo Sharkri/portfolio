@@ -43,6 +43,7 @@ export default {
         muted: "rgba(255, 255, 255, 0.6)",
         foreground: "#f9fafb", // gray-50
         accent: "oklch(94.5% 0.129 101.54)", // yellow-200
+        "accent-secondary": "oklch(90.1% 0.058 230.902)", // sky-200
       },
     },
   },

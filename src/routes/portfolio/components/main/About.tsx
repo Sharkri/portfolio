@@ -34,7 +34,8 @@ function About() {
                 <span className="text-accent">shark</span>
                 <rt className="text-xs text-muted">シャーク</rt>
               </ruby>
-              , a <span className="text-accent">fullstack developer</span>{" "}
+              , a{" "}
+              <span className="text-accent-secondary">fullstack developer</span>{" "}
               currently focused on creating clean and accessible web apps.
             </div>
             <div>
