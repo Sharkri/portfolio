@@ -75,3 +75,43 @@ body,
     @apply text-neutral-100;
   }
 }
+
+:root {
+  --frame-width: 32px;
+  --frame-height: 16px;
+  --frame-count: 2;
+  --scale: 3;
+  --sleep-cycle: 1.083333s;
+}
+
+.layer {
+  width: calc(var(--frame-width) * var(--scale));
+  height: calc(var(--frame-height) * var(--scale));
+  background-size: calc(var(--frame-width) * var(--frame-count) * var(--scale))
+    calc(var(--frame-height) * var(--scale));
+  image-rendering: pixelated;
+  animation: sleep-cycle var(--sleep-cycle) infinite;
+}
+
+.sprite {
+  background-image: url("/assets/animated/spritesheets/Sleep-Anim.png");
+}
+
+/*  frame 1 lasts 30 ticks and frame 2 lasts 35 ticks i.e. frame 1 is 30/65=0.46.1538% of the animation */
+@keyframes sleep-cycle {
+  0% {
+    background-position: 0 0;
+  }
+
+  46.1538% {
+    background-position: 0 0;
+  }
+
+  46.1539% {
+    background-position: calc(var(--frame-width) * var(--scale) * -1) 0;
+  }
+
+  100% {
+    background-position: calc(var(--frame-width) * var(--scale) * -1) 0;
+  }
+}
