@@ -34,7 +34,7 @@ function Hero() {
                 key={social.name}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-1.5 border border-zinc-700 rounded-sm text-zinc-300 hover:border-accent hover:text-accent transition group"
+                className="flex items-center gap-2 px-4 py-1.5 border border-zinc-700 rounded-sm text-zinc-300 hover:border-accent hover:text-accent transition group backdrop-blur-sm"
               >
                 <i
                   className={clsx(
@@ -48,7 +48,7 @@ function Hero() {
             ))}
           </div>
 
-          <div className="flex flex-col border border-gray-800/80 py-6 pb-0 rounded-sm mx-auto">
+          <div className="flex flex-col border border-gray-800/80 py-6 pb-0 rounded-sm mx-auto backdrop-blur-sm">
             <div className="px-5 pb-4 border-b border-gray-800 flex justify-between items-center gap-4">
               <h1 className="text-lg">latest blogs</h1>
               <Link
