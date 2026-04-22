@@ -1,12 +1,26 @@
 import Project from "../../types/Project";
 
-import waldoImg from "./project-screenshots/where-is-waldo.png?w=567&format=webp&imagetools";
+import achieverTestImg from "./project-screenshots/achiever-test.png?w=567&format=webp&imagetools";
 import todoImg from "./project-screenshots/shopping-cart.png?w=567&format=webp&imagetools";
 import mediumImg from "./project-screenshots/medium-clone.png?w=567&format=webp&imagetools";
 import cvAppImg from "./project-screenshots/cv-application.png?w=567&format=webp&imagetools";
 import pokeMemoImg from "./project-screenshots/pokememo.png?w=567&format=webp&imagetools";
 
 const projects: Project[] = [
+  {
+    title: "Achiever Test",
+    description:
+      "A Digital SAT prep platform built solo end-to-end, featuring a full-length test simulation engine and performance analytics to help students pinpoint weaknesses and improve scores.",
+    livePreview: "https://achievertest.com",
+    image: achieverTestImg,
+    technologies: ["Next.js", "TypeScript", "MongoDB", "Stripe", "TailwindCSS"],
+    learnings: [
+      "Replicating the Digital SAT experience with accurate timing and question formatting",
+      "Building an analytics dashboard with per-category accuracy, percentile benchmarking, and personalized insights",
+      "Integrating auth and Stripe subscription-based billing",
+    ],
+  },
+
   {
     title: "Medium Clone",
     description:
@@ -48,26 +62,6 @@ const projects: Project[] = [
       "Efficiently handling large API datasets",
       "Game state management and reset logic",
       "Audio control using Howler.js",
-    ],
-  },
-
-  {
-    title: "Where's Waldo",
-    description:
-      'An interactive and timed "Where\'s Waldo?" game where players find hidden characters, including a global leaderboard stored in Firebase.',
-    githubRepo: "Sharkri/where-is-waldo",
-    livePreview: "https://where-is-waldo-3e672.web.app/",
-    image: waldoImg,
-    technologies: [
-      "ReactJS",
-      "React Router Dom",
-      "Firebase",
-      "React Testing Library",
-    ],
-    learnings: [
-      "Mapping the coordinates of a character relative to an image",
-      "Writing TDD component tests and mocks",
-      "Saving user scores to a leaderboard",
     ],
   },
 

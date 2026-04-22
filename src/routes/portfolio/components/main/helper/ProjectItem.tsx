@@ -7,6 +7,8 @@ function ProjectItem({ project }: { project: Project }) {
   const [stars, setStars] = useState(0);
 
   useEffect(() => {
+    if (!project.githubRepo) return;
+
     axios
       .get(`https://api.github.com/repos/${project.githubRepo}`)
       .then((res) => setStars(res.data.stargazers_count))
@@ -19,7 +21,7 @@ function ProjectItem({ project }: { project: Project }) {
         <div className="flex-[40%] overflow-hidden">
           <img
             src={project.image}
-            className="brightness-90 hover:brightness-100 hover:scale-105 transition duration-300"
+            className="brightness-95 hover:brightness-100 hover:scale-105 transition duration-300"
             alt=""
             loading="lazy"
           />
@@ -72,7 +74,7 @@ function ProjectItem({ project }: { project: Project }) {
             ) : null}
           </div>
 
-          <div className="mt-6 flex gap-6 font-bold">
+          <div className="mt-6 flex gap-6 font-bold flex-wrap">
             <a
               href={project.livePreview}
               target="_blank"
@@ -89,21 +91,23 @@ function ProjectItem({ project }: { project: Project }) {
               />
             </a>
 
-            <a
-              href={`https://github.com/${project.githubRepo}`}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center gap-3 group"
-            >
-              <span>
-                view code
-                <div className="h-0.5 bg-white/75 origin-left translate-y-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </span>
-              <i
-                className="fa-solid fa-arrow-up rotate-45"
-                aria-hidden="true"
-              />
-            </a>
+            {project.githubRepo ? (
+              <a
+                href={`https://github.com/${project.githubRepo}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 group"
+              >
+                <span>
+                  view code
+                  <div className="h-0.5 bg-white/75 origin-left translate-y-1 scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                </span>
+                <i
+                  className="fa-solid fa-arrow-up rotate-45"
+                  aria-hidden="true"
+                />
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
