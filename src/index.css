@@ -78,8 +78,9 @@ body,
 
 :root {
   --frame-width: 32px;
-  --frame-height: 16px;
+  --frame-height: 24px;
   --frame-count: 2;
+  --sprite-row-count: 8;
   --scale: 3;
   --sleep-cycle: 1.083333s;
 }
@@ -88,16 +89,54 @@ body,
   width: calc(var(--frame-width) * var(--scale));
   height: calc(var(--frame-height) * var(--scale));
   background-size: calc(var(--frame-width) * var(--frame-count) * var(--scale))
-    calc(var(--frame-height) * var(--scale));
+    calc(var(--frame-height) * var(--sprite-row-count) * var(--scale));
   image-rendering: pixelated;
   animation: sleep-cycle var(--sleep-cycle) infinite;
 }
 
 .sprite {
-  background-image: url("/assets/animated/spritesheets/Sleep-Anim.png");
+  background-image: url("/assets/animated/spritesheets/EventSleep-Anim.png");
 }
 
-/*  frame 1 lasts 30 ticks and frame 2 lasts 35 ticks i.e. frame 1 is 30/65=0.46.1538% of the animation */
+.sprite-stage {
+  display: flex;
+  width: calc(40px * var(--scale));
+  height: calc(40px * var(--scale));
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.sprite.waking {
+  --frame-width: 40px;
+  --frame-height: 40px;
+  --frame-count: 5;
+
+  background-image: url("/assets/animated/spritesheets/Wake-Anim.png");
+  animation: wake-cycle 0.7s forwards;
+  transform: translateY(calc(10px * var(--scale)));
+}
+
+.sprite.idle {
+  --frame-width: 32px;
+  --frame-height: 40px;
+  --frame-count: 6;
+
+  background-image: url("/assets/animated/spritesheets/Idle-Anim.png");
+  animation: idle-cycle 1.866667s infinite;
+  transform: translateY(calc(10px * var(--scale)));
+}
+
+.sprite.nodding {
+  --frame-width: 32px;
+  --frame-height: 40px;
+  --frame-count: 3;
+
+  background-image: url("/assets/animated/spritesheets/Nod-Anim.png");
+  animation: nod-cycle 1s 2;
+  transform: translateY(calc(10px * var(--scale)));
+}
+
+/* Frame 1 lasts 30 ticks and frame 2 lasts 35 ticks (30/65 = 46.1538%). */
 @keyframes sleep-cycle {
   0% {
     background-position: 0 0;
@@ -113,5 +152,79 @@ body,
 
   100% {
     background-position: calc(var(--frame-width) * var(--scale) * -1) 0;
+  }
+}
+
+/* Wake frame durations: 8, 16, 4, 4, and 10 ticks (42 ticks total). */
+@keyframes wake-cycle {
+  0%,
+  19.0476% {
+    background-position: 0 0;
+  }
+
+  19.0477%,
+  57.1429% {
+    background-position: calc(var(--frame-width) * var(--scale) * -1) 0;
+  }
+
+  57.143%,
+  66.6667% {
+    background-position: calc(var(--frame-width) * var(--scale) * -2) 0;
+  }
+
+  66.6668%,
+  76.1905% {
+    background-position: calc(var(--frame-width) * var(--scale) * -3) 0;
+  }
+
+  76.1906%,
+  100% {
+    background-position: calc(var(--frame-width) * var(--scale) * -4) 0;
+  }
+}
+
+/* Use only the first two nod frames: 6 ticks, then 8 ticks. */
+@keyframes nod-cycle {
+  0%,
+  42.8571% {
+    background-position: 0 0;
+  }
+
+  42.8572%,
+  100% {
+    background-position: calc(var(--frame-width) * var(--scale) * -1) 0;
+  }
+}
+
+/* Idle frame durations: 60, 10, 18, 10, 4, and 10 ticks (112 total). */
+@keyframes idle-cycle {
+  0%,
+  53.5714% {
+    background-position: 0 0;
+  }
+
+  53.5715%,
+  62.5% {
+    background-position: calc(var(--frame-width) * var(--scale) * -1) 0;
+  }
+
+  62.5001%,
+  78.5714% {
+    background-position: calc(var(--frame-width) * var(--scale) * -2) 0;
+  }
+
+  78.5715%,
+  87.5% {
+    background-position: calc(var(--frame-width) * var(--scale) * -3) 0;
+  }
+
+  87.5001%,
+  91.0714% {
+    background-position: calc(var(--frame-width) * var(--scale) * -4) 0;
+  }
+
+  91.0715%,
+  100% {
+    background-position: calc(var(--frame-width) * var(--scale) * -5) 0;
   }
 }

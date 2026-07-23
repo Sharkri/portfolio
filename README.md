@@ -9,3 +9,8 @@ Links:
 
 - [Blog CMS](https://github.com/Sharkri/blog-api-cms)
 - [Blog API](https://github.com/Sharkri/blog-api)
+
+Credits:
+
+- Sprites used are from: [sprites.pmdcollab.org](https://sprites.pmdcollab.org/)
+- Main font is from: [cotorifont.booth.pm/items/6512460](https://cotorifont.booth.pm/items/6512460)
