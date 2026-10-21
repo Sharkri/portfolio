@@ -14,7 +14,9 @@ function Footer() {
     Promise.all(
       ["Wake-Anim.png", "Idle-Anim.png", "Nod-Anim.png"].map((filename) => {
         const image = new Image();
-        image.src = `/assets/animated/spritesheets/${filename}`;
+        image.src = `${
+          import.meta.env.BASE_URL
+        }assets/animated/spritesheets/${filename}`;
         return image.decode();
       })
     )
