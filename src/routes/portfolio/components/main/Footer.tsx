@@ -1,10 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Footer() {
   const [spriteState, setSpriteState] = useState<
     "sleeping" | "waking" | "idle" | "nodding"
   >("sleeping");
   const [hasPetted, setHasPetted] = useState(false);
+  const [spritesReady, setSpritesReady] = useState(false);
+  const [wakeRequested, setWakeRequested] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    Promise.all(
+      ["Wake-Anim.png", "Idle-Anim.png", "Nod-Anim.png"].map((filename) => {
+        const image = new Image();
+        image.src = `/assets/animated/spritesheets/${filename}`;
+        return image.decode();
+      })
+    )
+      .then(() => {
+        if (active) setSpritesReady(true);
+      })
+      .catch(() => {});
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!wakeRequested || !spritesReady) return;
+
+    const timeout = setTimeout(() => {
+      setWakeRequested(false);
+      setSpriteState("waking");
+    }, 150);
+
+    // eslint-disable-next-line consistent-return
+    return () => clearTimeout(timeout);
+  }, [wakeRequested, spritesReady]);
 
   return (
     <footer className="pb-12 pt-6 border-slate-700 border-t">
@@ -35,8 +69,7 @@ function Footer() {
             } border-0 p-0 ${spriteState}`}
             aria-label="honk mi mi mi mi"
             onClick={() => {
-              if (spriteState === "sleeping")
-                setTimeout(() => setSpriteState("waking"), 150);
+              if (spriteState === "sleeping") setWakeRequested(true);
             }}
             onAnimationEnd={() => {
               if (spriteState === "waking")
