@@ -21,8 +21,8 @@ export default {
       typography: ({ theme }) => ({
         accent: {
           css: {
-            "--tw-prose-links": theme("colors.accent"),
-            "--tw-prose-invert-links": theme("colors.accent"),
+            "--tw-prose-links": theme("colors.accent-secondary"),
+            "--tw-prose-invert-links": theme("colors.accent-secondary"),
           },
         },
       }),

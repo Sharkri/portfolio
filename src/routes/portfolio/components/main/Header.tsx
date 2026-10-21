@@ -16,17 +16,23 @@ function Header() {
         <div>
           <a
             href="#top"
-            className="flex items-center gap-2 hover:text-accent hover:text-shadow-lg transition-colors duration-300 text-xl"
+            className="flex items-center gap-2 watercolor-link text-xl"
             aria-label="Homepage"
           >
             シャーク
           </a>
         </div>
 
-        <div className="flex items-center gap-4 child-hover:text-shadow-lg child-hover:text-accent child:transition-colors child:duration-300 text-lg">
-          <a href="#about">about</a>
-          <a href="#projects">projects</a>
-          <Link to="/blog">blog</Link>
+        <div className="flex items-center gap-4 text-lg">
+          <a href="#about" className="watercolor-link">
+            about
+          </a>
+          <a href="#projects" className="watercolor-link">
+            projects
+          </a>
+          <Link to="/blog" className="watercolor-link">
+            blog
+          </Link>
         </div>
       </nav>
     </header>

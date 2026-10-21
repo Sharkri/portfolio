@@ -45,7 +45,7 @@ export default function BlogPost() {
       <div className="max-w-[1108px] py-12 px-2 sm:px-8 mx-auto">
         <Link
           to="/blog"
-          className="underline font-bold ml-4 mb-2 text-muted hover:text-accent transition-colors"
+          className="underline font-bold ml-4 mb-2 text-muted watercolor-link"
         >
           back to index
         </Link>

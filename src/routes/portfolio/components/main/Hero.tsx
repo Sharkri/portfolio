@@ -23,7 +23,8 @@ function Hero() {
     >
       <div>
         <h1 className="text-7xl max-md:text-6xl text-center mb-8">
-          hi, i&apos;m <span className="text-accent">shark</span>.
+          hi, i&apos;m <span className="text-accent text-shadow-lg">shark</span>
+          .
         </h1>
 
         <div className="w-[90%] mx-auto">
@@ -34,12 +35,12 @@ function Hero() {
                 key={social.name}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 px-4 py-1.5 border border-zinc-700 rounded-sm text-zinc-300 hover:border-accent hover:text-accent transition group backdrop-blur-sm"
+                className="flex items-center gap-2 px-4 py-1.5 border border-zinc-700 rounded-sm text-zinc-300 hover:border-accent-secondary hover:text-accent-secondary transition group backdrop-blur-sm"
               >
                 <i
                   className={clsx(
                     social.icon,
-                    "text-sm text-muted group-hover:text-accent transition"
+                    "text-sm text-muted group-hover:text-accent-secondary transition"
                   )}
                   aria-hidden="true"
                 />
@@ -51,10 +52,7 @@ function Hero() {
           <div className="flex flex-col border border-gray-800/80 py-6 pb-0 rounded-sm mx-auto backdrop-blur-sm">
             <div className="px-5 pb-4 border-b border-gray-800 flex justify-between items-center gap-4">
               <h1 className="text-lg">latest blogs</h1>
-              <Link
-                to="/blog"
-                className="hover:underline underline-offset-2 text-neutral-300 hover:text-accent hover:text-shadow-lg transition"
-              >
+              <Link to="/blog" className="text-neutral-300 watercolor-link">
                 view all
               </Link>
             </div>

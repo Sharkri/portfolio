@@ -85,6 +85,53 @@ body,
   --sleep-cycle: 1.083333s;
 }
 
+.watercolor-link {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+}
+
+.watercolor-link::before {
+  content: "";
+  position: absolute;
+  inset: 0 -22px;
+  z-index: -1;
+
+  background: radial-gradient(
+      ellipse at 35% 54%,
+      color-mix(in srgb, theme("colors.accent-secondary") 29%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse at 68% 45%,
+      color-mix(in srgb, theme("colors.accent-secondary") 32%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse at 50% 65%,
+      color-mix(in srgb, theme("colors.accent-secondary") 17%, transparent),
+      transparent 75%
+    );
+
+  filter: blur(7px);
+  opacity: 0;
+  transform: scale(0.85);
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  pointer-events: none;
+}
+
+.watercolor-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.watercolor-link:hover {
+  color: theme("colors.accent-secondary");
+  text-shadow: rgb(212, 212, 212) /* #d4d4d4 */ 0px 0px 10px;
+}
+
 .layer {
   width: calc(var(--frame-width) * var(--scale));
   height: calc(var(--frame-height) * var(--scale));

@@ -47,14 +47,14 @@ function Footer() {
           href="https://github.com/sharkri/portfolio"
           target="_blank"
           rel="noreferrer"
-          className="underline underline-offset-2 hover:text-accent-secondary hover:text-shadow-lg transition"
+          className="underline underline-offset-2 hover:text-accent-secondary hover:text-shadow-lg transition watercolor-link"
         >
           source code
         </a>
         <div className="border-b h-1 w-6 border-muted" />
         <a
           href="mailto:snowyshark@proton.me"
-          className="underline underline-offset-2 hover:text-accent-secondary hover:text-shadow-lg transition"
+          className="underline underline-offset-2 hover:text-accent-secondary hover:text-shadow-lg transition watercolor-link"
         >
           contact me
         </a>
